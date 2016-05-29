@@ -1,0 +1,363 @@
+[
+    {
+        "name": "mtdowling/cron-expression",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mtdowling/cron-expression.git",
+            "reference": "c9ee7886f5a12902b225a1a12f36bb45f9ab89e5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mtdowling/cron-expression/zipball/c9ee7886f5a12902b225a1a12f36bb45f9ab89e5",
+            "reference": "c9ee7886f5a12902b225a1a12f36bb45f9ab89e5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0|~5.0"
+        },
+        "time": "2016-01-26 21:23:30",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Cron": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "CRON for PHP: Calculate the next or previous run date and determine if a CRON expression is due",
+        "keywords": [
+            "cron",
+            "schedule"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "shasum": ""
+        },
+        "time": "2012-12-21 11:40:51",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Psr\\Log\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "peppeocchi/php-cron-scheduler",
+        "version": "v1.3",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/peppeocchi/php-cron-scheduler.git",
+            "reference": "ae1cc5f8cd1cca2688d48ac80f825cd7bf935016"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/peppeocchi/php-cron-scheduler/zipball/ae1cc5f8cd1cca2688d48ac80f825cd7bf935016",
+            "reference": "ae1cc5f8cd1cca2688d48ac80f825cd7bf935016",
+            "shasum": ""
+        },
+        "require": {
+            "mtdowling/cron-expression": "@stable",
+            "php": ">=5.5.9",
+            "psr/log": "~1.0",
+            "swiftmailer/swiftmailer": "@stable"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "5.0.*"
+        },
+        "time": "2016-04-19 00:52:10",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "GO": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Giuseppe Occhipinti",
+                "email": "peppeocchi@gmail.com"
+            },
+            {
+                "name": "Carsten Windler",
+                "email": "carsten@carstenwindler.de",
+                "homepage": "http://carstenwindler.de",
+                "role": "Contributor"
+            }
+        ],
+        "description": "PHP Cron Job Scheduler",
+        "keywords": [
+            "cron job",
+            "scheduler"
+        ]
+    },
+    {
+        "name": "swiftmailer/swiftmailer",
+        "version": "v5.4.2",
+        "version_normalized": "5.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/swiftmailer/swiftmailer.git",
+            "reference": "d8db871a54619458a805229a057ea2af33c753e8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/d8db871a54619458a805229a057ea2af33c753e8",
+            "reference": "d8db871a54619458a805229a057ea2af33c753e8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.1,<0.9.4"
+        },
+        "time": "2016-05-01 08:45:47",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/swift_required.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Chris Corbyn"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Swiftmailer, free feature-rich PHP mailer",
+        "homepage": "http://swiftmailer.org",
+        "keywords": [
+            "email",
+            "mail",
+            "mailer"
+        ]
+    },
+    {
+        "name": "catfan/medoo",
+        "version": "v1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/catfan/Medoo.git",
+            "reference": "342e2d6a3bcf4adcac58e67593d63547139ab1ac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/catfan/Medoo/zipball/342e2d6a3bcf4adcac58e67593d63547139ab1ac",
+            "reference": "342e2d6a3bcf4adcac58e67593d63547139ab1ac",
+            "shasum": ""
+        },
+        "require": {
+            "ext-pdo": "*",
+            "php": ">=5.1"
+        },
+        "suggest": {
+            "ext-pdo_dblib": "For MSSQL or Sybase databases on Linux/UNIX platform",
+            "ext-pdo_mysql": "For MySQL or MariaDB databases",
+            "ext-pdo_oci": "For Oracle databases",
+            "ext-pdo_pqsql": "For PostgreSQL databases",
+            "ext-pdo_sqlite": "For SQLite databases",
+            "ext-pdo_sqlsrv": "For MSSQL databases on Windows platform"
+        },
+        "time": "2016-02-14 16:03:42",
+        "type": "framework",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "medoo.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Angel Lai",
+                "email": "angel@catfan.me"
+            }
+        ],
+        "description": "The Lightest PHP database framework to accelerate development",
+        "homepage": "http://medoo.in",
+        "keywords": [
+            "database",
+            "lightweight",
+            "mssql",
+            "mysql",
+            "php framework",
+            "sql",
+            "sqlite"
+        ]
+    },
+    {
+        "name": "sallar/jdatetime",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sallar/jDateTime.git",
+            "reference": "65a60845da6b9c1727cffcbd7e594e7eee791068"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sallar/jDateTime/zipball/65a60845da6b9c1727cffcbd7e594e7eee791068",
+            "reference": "65a60845da6b9c1727cffcbd7e594e7eee791068",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.2"
+        },
+        "time": "2016-03-06 10:27:01",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "jdatetime.class.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Sallar Kaboli",
+                "email": "sallar.kaboli@gmail.com",
+                "homepage": "http://sallar.me",
+                "role": "Developer"
+            }
+        ],
+        "description": "Jalali (Shamsi) DateTime class written in PHP, Supports year higher than 2038",
+        "homepage": "http://sallar.me/projects/jdatetime/",
+        "keywords": [
+            "Jalali",
+            "date",
+            "datetime",
+            "farsi",
+            "iran",
+            "jalalidate",
+            "jdatetime",
+            "persian",
+            "shamsi",
+            "time"
+        ]
+    },
+    {
+        "name": "longman/telegram-bot",
+        "version": "0.29",
+        "version_normalized": "0.29.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/akalongman/php-telegram-bot.git",
+            "reference": "999ee2e7b154be1c9fb2f6ea9cc3d1d640303a80"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/akalongman/php-telegram-bot/zipball/999ee2e7b154be1c9fb2f6ea9cc3d1d640303a80",
+            "reference": "999ee2e7b154be1c9fb2f6ea9cc3d1d640303a80",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-pdo": "*",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpspec/phpspec": "~2.1",
+            "phpunit/phpunit": "~4.1",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "time": "2016-03-22 18:41:50",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Longman\\TelegramBot\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Avtandil Kikabidze aka LONGMAN",
+                "email": "akalongman@gmail.com",
+                "homepage": "http://longman.me",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP telegram bot",
+        "homepage": "https://github.com/akalongman/php-telegram-bot",
+        "keywords": [
+            "api",
+            "bot",
+            "telegram"
+        ]
+    }
+]

@@ -1,0 +1,116 @@
+[28-Apr-2016 09:35:24 UTC] PHP Fatal error:  Uncaught InvalidArgumentException:  is not a valid CRON expression in /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php:123
+Stack trace:
+#0 /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php(108): Cron\CronExpression->setExpression('')
+#1 /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php(77): Cron\CronExpression->__construct('', Object(Cron\FieldFactory))
+#2 /home/mohande4/public_html/api/telegrambot/vendor/peppeocchi/php-cron-scheduler/src/GO/Job/Job.php(135): Cron\CronExpression::factory('')
+#3 /home/mohande4/public_html/api/telegrambot/bot.php(54): GO\Job\Job->at('')
+#4 {main}
+  thrown in /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php on line 123
+[28-Apr-2016 09:51:11 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:11 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:12 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:12 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:12 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:13 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:13 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:13 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:14 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:14 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:14 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:15 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:15 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:15 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:18 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:18 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:18 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:19 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:19 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:19 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:20 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:20 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:20 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:21 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:21 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:21 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:22 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:22 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:22 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:23 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:24 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:24 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:24 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:25 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:25 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:25 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:26 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:26 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:26 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:27 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:27 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:27 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:27 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:28 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:28 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:28 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:29 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:29 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:29 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:30 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:30 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:30 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:31 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:31 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:31 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:31 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:32 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:32 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:32 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:33 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:33 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:33 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:34 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:34 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:35 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:35 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:36 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:36 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:36 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:36 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:37 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:37 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:37 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:38 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:38 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:38 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:39 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:39 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:51:39 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 09:52:00 UTC] PHP Warning:  curl_setopt_array(): Array keys must be CURLOPT constants or equivalent integer values in /home2/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 201
+[28-Apr-2016 10:20:21 UTC] PHP Warning:  file_put_contents(): Only 844 of 1443 bytes written, possibly out of free disk space in /home/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 126
+[28-Apr-2016 10:20:21 UTC] PHP Warning:  file_put_contents(): Only 0 of 24 bytes written, possibly out of free disk space in /home/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 126
+[28-Apr-2016 10:20:21 UTC] PHP Warning:  file_put_contents(): Only 0 of 1443 bytes written, possibly out of free disk space in /home/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 126
+[28-Apr-2016 10:20:21 UTC] PHP Warning:  file_put_contents(): Only 0 of 24 bytes written, possibly out of free disk space in /home/mohande4/public_html/api/telegrambot/vendor/longman/telegram-bot/src/Request.php on line 126
+[28-Apr-2016 10:20:22 UTC] PHP Warning:  file_put_contents(): Only 0 of 1443 bytes written, possibly out of free disk space in /home/mohande4/public_html/api/telegrambot/vendor/[30-Apr-2016 05:58:19 UTC] PHP Fatal error:  Uncaught InvalidArgumentException:  is not a valid CRON expression in /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php:123
+Stack trace:
+#0 /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php(108): Cron\CronExpression->setExpression('')
+#1 /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php(77): Cron\CronExpression->__construct('', Object(Cron\FieldFactory))
+#2 /home/mohande4/public_html/api/telegrambot/vendor/peppeocchi/php-cron-scheduler/src/GO/Job/Job.php(135): Cron\CronExpression::factory('')
+#3 /home/mohande4/public_html/api/telegrambot/bot.php(54): GO\Job\Job->at('')
+#4 {main}
+  thrown in /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php on line 123
+[30-Apr-2016 05:58:20 UTC] PHP Fatal error:  Uncaught InvalidArgumentException:  is not a valid CRON expression in /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php:123
+Stack trace:
+#0 /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php(108): Cron\CronExpression->setExpression('')
+#1 /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php(77): Cron\CronExpression->__construct('', Object(Cron\FieldFactory))
+#2 /home/mohande4/public_html/api/telegrambot/vendor/peppeocchi/php-cron-scheduler/src/GO/Job/Job.php(135): Cron\CronExpression::factory('')
+#3 /home/mohande4/public_html/api/telegrambot/bot.php(54): GO\Job\Job->at('')
+#4 {main}
+  thrown in /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php on line 123
+[30-Apr-2016 05:58:34 UTC] PHP Fatal error:  Uncaught InvalidArgumentException:  is not a valid CRON expression in /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php:123
+Stack trace:
+#0 /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php(108): Cron\CronExpression->setExpression('')
+#1 /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php(77): Cron\CronExpression->__construct('', Object(Cron\FieldFactory))
+#2 /home/mohande4/public_html/api/telegrambot/vendor/peppeocchi/php-cron-scheduler/src/GO/Job/Job.php(135): Cron\CronExpression::factory('')
+#3 /home/mohande4/public_html/api/telegrambot/bot.php(54): GO\Job\Job->at('')
+#4 {main}
+  thrown in /home/mohande4/public_html/api/telegrambot/vendor/mtdowling/cron-expression/src/Cron/CronExpression.php on line 123

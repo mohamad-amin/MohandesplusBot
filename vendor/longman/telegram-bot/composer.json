@@ -1,0 +1,40 @@
+{
+    "name": "longman/telegram-bot",
+    "type": "library",
+    "description": "PHP telegram bot",
+    "keywords": ["telegram", "bot", "api"],
+    "license": "MIT",
+    "homepage": "https://github.com/akalongman/php-telegram-bot",
+    "support": {
+        "issues": "https://github.com/akalongman/php-telegram-bot/issues",
+        "source": "https://github.com/akalongman/php-telegram-bot"
+    },
+    "authors": [
+        {
+            "name": "Avtandil Kikabidze aka LONGMAN",
+            "email": "akalongman@gmail.com",
+            "homepage": "http://longman.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "ext-pdo": "*",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Longman\\TelegramBot\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1",
+        "phpspec/phpspec": "~2.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    }
+}
