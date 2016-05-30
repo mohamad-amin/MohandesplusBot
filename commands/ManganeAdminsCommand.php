@@ -161,11 +161,22 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $result = Request::sendMessage($data);
                         break;
                     }
+                    $shouldContinue = false;
                     $channel = $this->conversation->notes['channelName'];
                     switch ($text) {
                         case 'مشاهده‌ی ادمین‌ها':
                             $helpers = explode(',', \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername()));
-                            
+                            $tData = [];
+                            $tData['chat_id'] = $chat_id;
+                            if (count($helpers) > 0) {
+                                $tData['text'] = '';
+                                for ($i=0; $i<count($helpers); $i++) {
+                                    $tData['text'] .= $i.'. @'.$helpers[$i]."\n";
+                                }
+                            } else {
+                                $tData['text'] = 'کانال '.'@'.$this->conversation->notes['channelName'].' ادمینی ندارد.';
+                            }
+                            Request::sendMessage($tData);
                             break;
                         case 'حذف ادمین':
                             break;
@@ -176,6 +187,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $this->conversation->notes['state'] = ++$state;
                     $text = '';
                     $this->conversation->update();
+                    if (!$shouldContinue) break;
                 case 2:
                     if (empty($text) || !is_numeric($text)) {
                         $data = [];
