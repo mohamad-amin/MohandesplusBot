@@ -60,7 +60,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
             switch ($state) {
                 case 0:
-                    if (empty($text)) {
+                    $validAnswers = ['📣 مدیریت کانال‌ها', '➕ افزودن کانال', '➖ حذف کانال'];
+                    if (empty($text) || !in_array($text, $validAnswers)) {
                         $data['text'] = 'گزینه‌ی مورد نظر را انتخاب کنید:';
                         $keyboard = [];
                         $keyboard[] = ['➕ افزودن کانال', '➖ حذف کانال', '📣 مدیریت کانال‌ها'];
@@ -120,8 +121,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $keyboard = [];
                         $i = 0;
                         foreach ($channels as $channel) {
-                            $j = (int) floor($i/3);
-                            $keyboard[$j][$i%3] = $channel;
+                            $j = (int)floor($i / 3);
+                            $keyboard[$j][$i % 3] = $channel;
                             $i++;
                         }
                         $keyboard[] = ['بیخیال', 'بازگشت'];
@@ -140,8 +141,9 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $text = '';
                     $this->conversation->notes['state'] = ++$state;
                     $this->conversation->update();
-                case 3:
-                    if (empty($text)) {
+                case 2:
+                    $validAnswers = ['مشاهده‌ی ادمین‌ها', 'حذف ادمین', 'افزودن ادمین'];
+                    if (empty($text) || !in_array($text, $validAnswers)) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
@@ -170,100 +172,53 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $tData['chat_id'] = $chat_id;
                             if (count($helpers) > 0) {
                                 $tData['text'] = '';
-                                for ($i=0; $i<count($helpers); $i++) {
-                                    $tData['text'] .= $i.'. @'.$helpers[$i]."\n";
+                                for ($i = 0; $i < count($helpers); $i++) {
+                                    $tData['text'] .= $i . '. @' . $helpers[$i] . "\n";
                                 }
                             } else {
-                                $tData['text'] = 'کانال '.'@'.$this->conversation->notes['channelName'].' ادمینی ندارد.';
+                                $tData['text'] = 'کانال ' . '@' . $this->conversation->notes['channelName'] . ' ادمینی ندارد.';
                             }
                             Request::sendMessage($tData);
                             break;
                         case 'حذف ادمین':
+                            $helpers = explode(',', \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername()));
+                            $tData = [];
+                            $tData['chat_id'] = $chat_id;
+                            if (count($helpers) > 0) {
+                                $tData['text'] = 'ادمین مورد نظر را انتخاب کنید:';
+                                Request::sendMessage($tData);
+                                $tData['text'] = '';
+                                for ($i = 0; $i < count($helpers); $i++) {
+                                    $tData['text'] .= $i . '. @' . $helpers[$i] . "\n" . 'حذف: ' . '/deleteadmin' . $helpers[$i] . "\n";
+                                }
+                                $this->conversation->notes['state'] = 4;
+                                $this->conversation->update();
+                            } else {
+                                $tData['text'] = 'کانال ' . '@' . $this->conversation->notes['channelName'] . ' ادمینی ندارد.';
+                            }
+                            Request::sendMessage($tData);
                             break;
                         case 'افزودن ادمین':
+                            $this->conversation->notes['state'] = ++$state;
+                            $this->conversation->update();
+                            $shouldContinue = true;
                             break;
                     }
-                    $this->conversation->notes['messageText'] = $text;
-                    $this->conversation->notes['state'] = ++$state;
                     $text = '';
-                    $this->conversation->update();
                     if (!$shouldContinue) break;
-                case 2:
-                    if (empty($text) || !is_numeric($text)) {
-                        $data = [];
-                        $data['reply_to_message_id'] = $message_id;
-                        $data['chat_id'] = $chat_id;
-                        $data['text'] = 'سال ارسال پیام خود را وارد کنید';
-                        $keyboard = [
-                            ['1395', '1396', '1397'],
-                            ['بازگشت', 'بیخیال']
-                        ];
-                        $data['reply_markup'] = new ReplyKeyboardMarkup(
-                            [
-                                'keyboard' => $keyboard,
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
-                                'selective' => true
-                            ]
-                        );
-                        $result = Request::sendMessage($data);
-                        break;
-                    }
-                    $this->conversation->notes['year'] = $text;
-                    $this->conversation->notes['state'] = ++$state;
-                    $text = '';
-                    $this->conversation->update();
                 case 3:
-                    if (empty($text) || !is_numeric($text) || intval($text)<1 || intval($text)>12) {
+                    if (empty($text) || $message->getForwardedFrom() == null ||
+                        $message->getForwardedFrom()->getUsername() == null || empty($message->getForwardedFrom()->getUsername())
+                    ) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
-                        $data['text'] = 'ماه ارسال پیام را وارد کنید:';
-                        $keyboard = [
-                            ['1', '2', '3', '4'],
-                            ['5', '6', '7', '8'],
-                            ['9', '10', '11', '12'],
-                            ['بازگشت', 'بیخیال']
-                        ];
-                        $data['reply_markup'] = new ReplyKeyboardMarkup(
-                            [
-                                'keyboard' => $keyboard,
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
-                                'selective' => true
-                            ]
-                        );
-                        $result = Request::sendMessage($data);
-                        break;
-                    }
-                    $this->conversation->notes['month'] = $text;
-                    $this->conversation->notes['state'] = ++$state;
-                    $text = '';
-                    $this->conversation->update();
-                case 4:
-                    if (empty($text) || !is_numeric($text) || intval($text)<1 || intval($text)>31) {
-                        $this->conversation->update();
-                        $data = [];
-                        $data['reply_to_message_id'] = $message_id;
-                        $data['chat_id'] = $chat_id;
-                        $data['text'] = 'روز ارسال پیام را وارد کنید:';
-                        if ($this->conversation->notes['month'] < 7) {
-                            $keyboard = [
-                                ['1', '2', '3', '4', '5', '6', '7', '8'],
-                                ['9', '10', '11', '12', '13', '14', '15', '16'],
-                                ['17', '18', '19', '20', '21', '22', '23', '24'],
-                                ['25', '26', '27', '28', '29', '30', '31', ' '],
-                                ['بازگشت', 'بیخیال']
-                            ];
+                        if ($message->getForwardFrom() == null) {
+                            $data['text'] = 'پیامی از ادمین مورد نظر فوروارد کنید:';
                         } else {
-                            $keyboard = [
-                                ['1', '2', '3', '4', '5', '6', '7', '8'],
-                                ['9', '10', '11', '12', '13', '14', '15', '16'],
-                                ['17', '18', '19', '20', '21', '22', '23', '24'],
-                                ['25', '26', '27', '28', '29', '30', ' ', ' '],
-                                ['بازگشت', 'بیخیال']
-                            ];
+                            $data['text'] = 'ادمین موردنظر باید username داشته باشد. لطفا پیامی دیگر فوروارد کنید.';
                         }
+                        $keyboard = [['بیخیال', 'بازگشت']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -275,110 +230,88 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $result = Request::sendMessage($data);
                         break;
                     }
-                    $this->conversation->notes['day'] = $text;
-                    $this->conversation->notes['state'] = ++$state;
-                    $text = '';
-                    $this->conversation->update();
-                case 5:
-                    if (empty($text) || !is_numeric($text) || intval($text)<0 || intval($text)>24) {
-                        $this->conversation->update();
-                        $data = [];
-                        $data['reply_to_message_id'] = $message_id;
-                        $data['chat_id'] = $chat_id;
-                        $data['text'] = 'ساعت (۲۴ ساعته) ارسال پیام را وارد کنید:';
-                        $keyboard = [['بازگشت', 'بیخیال']];
-                        $data['reply_markup'] = new ReplyKeyboardMarkup(
-                            [
-                                'keyboard' => $keyboard,
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
-                                'selective' => true
-                            ]
-                        );
-                        $result = Request::sendMessage($data);
-                        break;
+                    $channel = $this->conversation->notes['channelName'];
+                    $username = $message->getForwardFrom()->getUsername();
+                    $tData = [];
+                    $tData['chat_id'] = $chat_id;
+                    if (\AdminDatabase::addHelperToChannel($channel, $user->getUsername(), $username)) {
+                        $tData['message'] = 'کاربر ' . '@' . $username . ' با موفقیت به کانال' . ' @' . $channel . ' اضافه شد :)';
+                    } else {
+                        $tData['message'] = 'خطا در اضافه کردن کاربر ' . '@' . $username . 'به کانال' . ' @' . $channel . ' !';
                     }
-                    $this->conversation->notes['hour'] = $text;
-                    $this->conversation->notes['state'] = ++$state;
-                    $text = '';
-                    $this->conversation->update();
-                case 6:
-                    if (empty($text) || !is_numeric($text) || intval($text)<0 || intval($text)>60) {
-                        $this->conversation->update();
-                        $data = [];
-                        $data['reply_to_message_id'] = $message_id;
-                        $data['chat_id'] = $chat_id;
-                        $data['text'] = 'دقیقه‌ی ارسال پیام را وارد کنید:';
-                        $keyboard = [['بازگشت', 'بیخیال']];
-                        $data['reply_markup'] = new ReplyKeyboardMarkup(
-                            [
-                                'keyboard' => $keyboard,
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
-                                'selective' => true
-                            ]
-                        );
-                        $result = Request::sendMessage($data);
-                        break;
-                    }
-                    $this->conversation->notes['minute'] = $text;
-                    $this->conversation->notes['state'] = ++$state;
-                    $text = '';
-                    $this->conversation->update();
-                case 7:
-                    if (empty($text) || !($text == 'ارسال')) {
-                        $this->conversation->update();
-
-                        $time = $this->conversation->notes['year'].'-'.
-                            $this->conversation->notes['month'].'-'.
-                            $this->conversation->notes['day'].'-'.
-                            $this->conversation->notes['hour'].'-'.
-                            $this->conversation->notes['minute'];
-
-                        $keyboard = [['ارسال', 'بازگشت', 'بیخیال']];
-                        $data = [];
-                        $data['chat_id'] = $chat_id;
-                        $data['text'] = 'پیش نمایش:';
-                        Request::sendMessage($data);
-                        $data['text'] = $this->conversation->notes['messageText'];
-                        Request::sendMessage($data);
-                        if (\PersianTimeGenerator::getTimeInMilliseconds($time) < round(microtime(true))) {
-                            $data['text'] = 'هشدار! زمان انتخابی شما قبل از حال است! در این صورت پیام شما در لحظه فرستاده خواهد شد.';
-                            Request::sendMessage($data);
-                        }
-                        $reply_keyboard_markup = new ReplyKeyboardMarkup(
-                            [
-                                'keyboard' => $keyboard,
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
-                                'selective' => true
-                            ]
-                        );
-                        $data['reply_markup'] = $reply_keyboard_markup;
-                        $data['text'] = 'برای ارسال پست بالا در تاریخ و زمان '.
-                            \PersianDateFormatter::format($this->conversation->notes).' دکمه‌ی ارسال را کلیک کنید. ';
-                        $result = Request::sendMessage($data);
-                        break;
-                    }
-                    $databaser->addMessageToDatabase(
-                        $this->conversation->notes['messageText'] . "\n" . '@mohandes_plus',
-                        '@' . $this->conversation->notes['channelName'],
-                        $chat_id,
-                        $this->conversation->notes['year'].'-'.
-                        $this->conversation->notes['month'].'-'.
-                        $this->conversation->notes['day'].'-'.
-                        $this->conversation->notes['hour'].'-'.
-                        $this->conversation->notes['minute'],
-                        ($this->conversation->notes['edit_time'] == null) ? 0 : $this->conversation->notes['edit_time']
-                    );
-                    $data = [];
-                    $data['reply_to_message_id'] = $message_id;
-                    $data['chat_id'] = $chat_id;
-                    $data['text'] = "پیام شما ارسال خواهد شد :)";
-                    $data['reply_markup'] = new ReplyKeyboardHide(['selective' => true]);
-                    $result = Request::sendMessage($data);
+                    Request::sendMessage($tData);
                     $this->conversation->stop();
-                    $this->telegram->executeCommand("start");
+                    $this->telegram->executeCommand('cancel');
+                    break;
+                case 4:
+                    // Todo: delete admin.
+                    // We assume $text is the name of the admin to be deleted.
+                    $channel = $this->conversation->notes['channelName'];
+                    $helpers = explode(',', \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername()));
+                    if (empty($text) || !in_array($text, $helpers)) {
+                        $data = [];
+                        $data['reply_to_message_id'] = $message_id;
+                        $data['chat_id'] = $chat_id;
+                        $data['text'] = 'ادمین مورد نظر را انتخاب کنید:';
+                        Request::sendMessage($data);
+                        $tData['text'] = '';
+                        for ($i = 0; $i < count($helpers); $i++) {
+                            $tData['text'] .= $i . '. @' . $helpers[$i] . "\n" . 'حذف: ' . '/deleteadmin' . $helpers[$i] . "\n";
+                        }
+                        Request::sendMessage($tData);
+                        break;
+                    }
+                    $this->conversation->notes['helper'] = $text;
+                    $this->conversation->notes['state'] = ++$state;
+                    $this->conversation->update();
+                    $text = '';
+                case 5:
+                    if (empty($text) || ($text != 'بله' && $text != 'خیر')) {
+                        $data = [];
+                        $data['reply_to_message_id'] = $message_id;
+                        $data['chat_id'] = $chat_id;
+                        $data['text'] = 'آیا از حذف ' . '@' . $this->conversation->notes['helper'] . ' مطمئنید؟';
+                        $keyboard = [['بله', 'خیر'], ['بیخیال']];
+                        $data['reply_markup'] = new ReplyKeyboardMarkup(
+                            [
+                                'keyboard' => $keyboard,
+                                'resize_keyboard' => true,
+                                'one_time_keyboard' => true,
+                                'selective' => true
+                            ]
+                        );
+                        $result = Request::sendMessage($data);
+                        break;
+                    }
+                    if ($text == 'بله') {
+                        $channel = $this->conversation->notes['channelName'];
+                        $helper = $this->conversation->notes['helper'];
+                        if (\AdminDatabase::removeHelperFromChannel($channel, $user->getUsername(), $helper)) {
+                            $data = [];
+                            $data['chat_id'] = $chat_id;
+                            $data['text'] = 'با موفقیت حذف شد :)';
+                            Request::sendMessage($data);
+                            $this->conversation->stop();
+                            $this->telegram->executeCommand('cancel');
+                            return true;
+                        } else {
+                            $data = [];
+                            $data['chat_id'] = $chat_id;
+                            $data['text'] = 'خطا در حذف ' . '@' . $helper . ' :(';
+                            Request::sendMessage($data);
+                            $this->conversation->stop();
+                            $this->telegram->executeCommand('manageadmins');
+                            return true;
+                        }
+                    } else {
+                        $data = [];
+                        $data['chat_id'] = $chat_id;
+                        $data['text'] = 'عملیات متوقف شد.';
+                        Request::sendMessage($data);
+                        $this->conversation->stop();
+                        $this->telegram->executeCommand('manageadmins');
+                        return true;
+                    }
                     break;
             }
 
