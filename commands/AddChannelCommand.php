@@ -44,6 +44,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $text = $message->getText(true);
             $message_id = $message->getMessageId();      //Get message Id
 
+            if ($text == '➕ افزودن کانال') {
+                $text = '';
+            }
+
             $data = [];
             $data['reply_to_message_id'] = $message_id;
             $data['chat_id'] = $chat_id;
