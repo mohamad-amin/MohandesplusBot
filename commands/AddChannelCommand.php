@@ -43,14 +43,13 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $text = $message->getText(true);
             $message_id = $message->getMessageId();      //Get message Id
 
-            $data = [];
-            $data['chat_id'] = $chat_id;
-
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
             $state = 0;
-            $this->conversation->notes['chat_id'] = $chat_id;
-            $this->conversation->update();
-
+            $data = [];
+            $data['chat_id'] = $chat_id;
+            if ($text == '➕ افزودن کانال') {
+                $text = '';
+            }
 
             if ($user->getUsername() == null || empty($user->getUsername())) {
                 $data['text'] = 'برای استفاده از این ربات باید Username داشته باشید. از قسمت تنظیمات تلگرام یک Username برای خود بسازید.';
@@ -59,7 +58,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 switch ($state) {
                     case 0: {
                         if (empty($text)) {
-                            $data['text'] = 'آیدی کانال را وارد کنید:';
+                            $data['text'] = 'آیدی کانال را وارد کنید:'.' آیدی را بدون @ وارد کنید.';
                             $keyboard = [['بیخیال']];
                             $data['reply_markup'] = new ReplyKeyboardMarkup(
                                 [
@@ -71,11 +70,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             );
                             $result = Request::sendMessage($data);
                             break;
-                        } else {
-                            $tData = [];
-                            $tData['chat_id'] = $chat_id;
-                            $tData['text'] = 'Text is not null :) '."\nIt is\n".$text."\nAnd username\n".$user->getUsername();
-                            Request::sendMessage($tData);
                         }
                         if (\AdminDatabase::addChannel($text, $user->getUsername())) {
                             $data['text'] = 'کانال شما اضافه شد. برای استفاده از ربات باید این ربات را به صورت ادمین به کانال خود اضافه کنید.'
