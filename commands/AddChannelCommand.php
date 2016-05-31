@@ -92,6 +92,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $this->telegram->executeCommand('cancel');
                         } else {
                             $data['text'] = 'خطا در اضافه کردن کانال! لطفا مجددا تلاش کنید.آیدی کانال را وارد کنید:';
+                            Request::sendMessage($data);
                         }
 
                         break;

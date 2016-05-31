@@ -447,6 +447,14 @@ namespace {
 
         }
 
+        public static function addChannel($channel, $admin) {
+            Database::getDatabase()->insert('admin', [
+                'Channel' => $channel,
+                'Admin' => $admin,
+                'Type' => 0
+            ]);
+        }
+
         public static function getAdminsChannels($user) {
 
             $data = Database::getDatabase()->select('admin', '*', [
