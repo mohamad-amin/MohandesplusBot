@@ -80,6 +80,9 @@ class StartCommand extends UserCommand {
             $this->telegram->executeCommand("sendgif");
         } else if ($text == 'مدیریت پست‌ها') {
             \PostAdmin::showMessages($chat_id);
+        } else if ($text == 'مدیریت ادمین‌ها') {
+            $this->conversation->stop();
+            $this->telegram->executeCommand('manageadmins');
         } else {
             $keyboard = [
                 ["مدیریت پست‌ها", "افزودن پست"],
