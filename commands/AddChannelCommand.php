@@ -88,6 +88,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $text = '';
                         $this->conversation->notes['state'] = ++$state;
                         $this->conversation->update();
+                        $tData = [];
+                        $tData['chat_id'] = $chat_id;
+                        $tData['text'] = $text."\n\n".$user->getUsername();
+                        Request::sendMessage($tData);
                         if (\AdminDatabase::addChannel($text, $user->getUsername())) {
                             $data['text'] = 'کانال شما اضافه شد. برای استفاده از ربات باید این ربات را به صورت ادمین به کانال خود اضافه کنید.'
                                 .' در غیر این صورت ربات برای شما کار نخواهد کرد.';
