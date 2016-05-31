@@ -85,9 +85,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $result = Request::sendMessage($data);
                             break;
                         }
-                        $text = '';
-                        $this->conversation->notes['state'] = ++$state;
-                        $this->conversation->update();
                         $tData = [];
                         $tData['chat_id'] = $chat_id;
                         $tData['text'] = $text."\n\n".$user->getUsername();
