@@ -62,19 +62,12 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 $state = $this->conversation->notes['state'];
             }
 
-            if ($text == 'بازگشت') {
-                --$state;
-                $this->conversation->notes['state'] = $state;
-                $this->conversation->update();
-                $text = '';
-            }
-
             if ($user->getUsername() == null || empty($user->getUsername())) {
                 $data['text'] = 'برای استفاده از این ربات باید Username داشته باشید. از قسمت تنظیمات تلگرام یک Username برای خود بسازید.';
                 $result = Request::sendMessage($data);
             } else {
                 switch ($state) {
-                    case 0:
+                    case 0: {
                         if (empty($text)) {
                             $data['text'] = 'آیدی کانال را وارد کنید:';
                             $keyboard = [['بیخیال']];
@@ -103,8 +96,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $data['text'] = 'خطا در اضافه کردن کانال! لطفا مجددا تلاش کنید.آیدی کانال را وارد کنید:'."\n".$text;
                             Request::sendMessage($data);
                         }
-
                         break;
+                    }
                 }
             }
 
