@@ -169,7 +169,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $helpers = explode(',', \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername()));
                             $tData = [];
                             $tData['chat_id'] = $chat_id;
-                            if (count($helpers) > 0) {
+                            if ($helpers != null && count($helpers) > 0) {
                                 $tData['text'] = '';
                                 for ($i = 0; $i < count($helpers); $i++) {
                                     $tData['text'] .= $i . '. @' . $helpers[$i] . "\n";
@@ -183,7 +183,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $helpers = explode(',', \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername()));
                             $tData = [];
                             $tData['chat_id'] = $chat_id;
-                            if (count($helpers) > 0) {
+                            if ($helpers != null && count($helpers) > 0) {
                                 $tData['text'] = 'ادمین مورد نظر را انتخاب کنید:';
                                 Request::sendMessage($tData);
                                 $tData['text'] = '';
