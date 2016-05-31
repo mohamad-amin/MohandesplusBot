@@ -43,24 +43,14 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $text = $message->getText(true);
             $message_id = $message->getMessageId();      //Get message Id
 
-            if ($text == '➕ افزودن کانال') {
-                $text = '';
-            } else {
-                $tData = [];
-                $tData['chat_id'] = $chat_id;
-                $tData['text'] = 'text is '.$text;
-            }
-
             $data = [];
-            $data['reply_to_message_id'] = $message_id;
             $data['chat_id'] = $chat_id;
 
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
-            if (!isset($this->conversation->notes['state'])) {
-                $state = '0';
-            } else {
-                $state = $this->conversation->notes['state'];
-            }
+            $state = 0;
+            $this->conversation->notes['chat_id'] = $chat_id;
+            $this->conversation->update();
+
 
             if ($user->getUsername() == null || empty($user->getUsername())) {
                 $data['text'] = 'برای استفاده از این ربات باید Username داشته باشید. از قسمت تنظیمات تلگرام یک Username برای خود بسازید.';
