@@ -9,12 +9,11 @@
 
 namespace Longman\TelegramBot\Commands\UserCommands {
 
-    use Longman\TelegramBot\Entities\ReplyKeyboardHide;
+    use Longman\TelegramBot\Commands\UserCommand;
+    use Longman\TelegramBot\Conversation;
+    use Longman\TelegramBot\Entities\ReplyKeyboardMarkup;
     use Longman\TelegramBot\Request;
     use Longman\TelegramBot\Telegram;
-    use Longman\TelegramBot\Conversation;
-    use Longman\TelegramBot\Commands\UserCommand;
-    use Longman\TelegramBot\Entities\ReplyKeyboardMarkup;
 
     class AddChannelCommand extends UserCommand {
 
@@ -95,7 +94,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $result = Request::sendMessage($data);
                             $this->telegram->executeCommand('cancel');
                         } else {
-                            $data['text'] = 'خطا در اضافه کردن کانال! لطفا مجددا تلاش کنید.آیدی کانال را وارد کنید:';
+                            $data['text'] = 'خطا در اضافه کردن کانال! لطفا مجددا تلاش کنید.آیدی کانال را وارد کنید:'."\n".$text;
                             Request::sendMessage($data);
                         }
 

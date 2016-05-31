@@ -9,12 +9,11 @@
 
 namespace Longman\TelegramBot\Commands\UserCommands {
 
-    use Longman\TelegramBot\Entities\ReplyKeyboardHide;
-    use Longman\TelegramBot\Request;
-    use Longman\TelegramBot\Telegram;
-    use Longman\TelegramBot\Conversation;
     use Longman\TelegramBot\Commands\UserCommand;
+    use Longman\TelegramBot\Conversation;
+    use Longman\TelegramBot\Entities\ReplyKeyboardHide;
     use Longman\TelegramBot\Entities\ReplyKeyboardMarkup;
+    use Longman\TelegramBot\Request;
 
     class ManageAdminsCommand extends UserCommand {
 
@@ -448,7 +447,7 @@ namespace {
         }
 
         public static function addChannel($channel, $admin) {
-            Database::getDatabase()->insert('admin', [
+            return Database::getDatabase()->insert('admin', [
                 'Channel' => $channel,
                 'Admin' => $admin,
                 'Type' => 0
