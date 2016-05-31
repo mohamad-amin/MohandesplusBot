@@ -206,8 +206,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $text = '';
                     if (!$shouldContinue) break;
                 case 3:
-                    if (empty($text) || $message->getForwardedFrom() == null ||
-                        $message->getForwardedFrom()->getUsername() == null || empty($message->getForwardedFrom()->getUsername())
+                    if (empty($text) || $message->getForwardFrom() == null ||
+                        $message->getForwardFrom()->getUsername() == null || empty($message->getForwardFrom()->getUsername())
                     ) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
