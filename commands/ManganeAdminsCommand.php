@@ -166,7 +166,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $channel = $this->conversation->notes['channelName'];
                     switch ($text) {
                         case 'مشاهده‌ی ادمین‌ها':
-                            $helpers = explode(',', \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername()));
+                            $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
                             $tData = [];
                             $tData['chat_id'] = $chat_id;
                             if ($helpers != null && count($helpers) > 0) {
@@ -180,7 +180,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             Request::sendMessage($tData);
                             break;
                         case 'حذف ادمین':
-                            $helpers = explode(',', \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername()));
+                            $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
                             $tData = [];
                             $tData['chat_id'] = $chat_id;
                             if ($helpers != null && count($helpers) > 0) {
@@ -207,8 +207,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     if (!$shouldContinue) break;
                 case 3:
                     if (empty($text) || $message->getForwardFrom() == null ||
-                        $message->getForwardFrom()->getUsername() == null || empty($message->getForwardFrom()->getUsername())
-                    ) {
+                        $message->getForwardFrom()->getUsername() == null || empty($message->getForwardFrom()
+                            ->getUsername())) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
@@ -234,19 +234,18 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $tData = [];
                     $tData['chat_id'] = $chat_id;
                     if (\AdminDatabase::addHelperToChannel($channel, $user->getUsername(), $username)) {
-                        $tData['message'] = 'کاربر ' . '@' . $username . ' با موفقیت به کانال' . ' @' . $channel . ' اضافه شد :)';
+                        $tData['text'] = 'کاربر ' . '@' . $username . ' با موفقیت به کانال' . ' @' . $channel . ' اضافه شد :)';
                     } else {
-                        $tData['message'] = 'خطا در اضافه کردن کاربر ' . '@' . $username . 'به کانال' . ' @' . $channel . ' !';
+                        $tData['text'] = 'خطا در اضافه کردن کاربر ' . '@' . $username . 'به کانال' . ' @' . $channel . ' !';
                     }
                     Request::sendMessage($tData);
                     $this->conversation->stop();
                     $this->telegram->executeCommand('cancel');
                     break;
                 case 4:
-                    // Todo: delete admin.
                     // We assume $text is the name of the admin to be deleted.
                     $channel = $this->conversation->notes['channelName'];
-                    $helpers = explode(',', \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername()));
+                    $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
                     if (empty($text) || !in_array($text, $helpers)) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
