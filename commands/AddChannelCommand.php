@@ -45,6 +45,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
             if ($text == '➕ افزودن کانال') {
                 $text = '';
+            } else {
+                $tData = [];
+                $tData['chat_id'] = $chat_id;
+                $tData['text'] = 'text is '.$text;
             }
 
             $data = [];
@@ -66,7 +70,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             }
 
             if ($user->getUsername() == null || empty($user->getUsername())) {
-                $data['text'] = 'برای استفاده از این ربات باید Username داشته باشید. از قسمت تنظیمات تلگرام یک username برای خود بسازید.';
+                $data['text'] = 'برای استفاده از این ربات باید Username داشته باشید. از قسمت تنظیمات تلگرام یک Username برای خود بسازید.';
                 $result = Request::sendMessage($data);
             } else {
                 switch ($state) {
@@ -84,11 +88,12 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             );
                             $result = Request::sendMessage($data);
                             break;
+                        } else {
+                            $tData = [];
+                            $tData['chat_id'] = $chat_id;
+                            $tData['text'] = 'Text is not null :) '."\nIt is\n".$text."\nAnd username\n".$user->getUsername();
+                            Request::sendMessage($tData);
                         }
-                        $tData = [];
-                        $tData['chat_id'] = $chat_id;
-                        $tData['text'] = $text."\n\n".$user->getUsername();
-                        Request::sendMessage($tData);
                         if (\AdminDatabase::addChannel($text, $user->getUsername())) {
                             $data['text'] = 'کانال شما اضافه شد. برای استفاده از ربات باید این ربات را به صورت ادمین به کانال خود اضافه کنید.'
                                 .' در غیر این صورت ربات برای شما کار نخواهد کرد.';
