@@ -169,15 +169,14 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
                             $tData = [];
                             $tData['chat_id'] = $chat_id;
-//                            if ($helpers != null && count($helpers) > 0) {
-//                                $tData['text'] = '';
-//                                for ($i = 0; $i < count($helpers); $i++) {
-//                                    $tData['text'] .= $i . '. @' . $helpers[$i] . "\n";
-//                                }
-//                            } else {
-//                                $tData['text'] = 'کانال ' . '@' . $this->conversation->notes['channelName'] . ' ادمینی ندارد.';
-//                            }
-                            $tData['text'] = var_export($helpers, true);
+                            if ($helpers != null && count($helpers) > 0) {
+                                $tData['text'] = '';
+                                for ($i = 0; $i < count($helpers); $i++) {
+                                    $tData['text'] .= $i . '. @' . $helpers[$i] . "\n";
+                                }
+                            } else {
+                                $tData['text'] = 'کانال ' . '@' . $this->conversation->notes['channelName'] . ' ادمینی ندارد.';
+                            }
                             Request::sendMessage($tData);
                             break;
                         case 'حذف ادمین':
