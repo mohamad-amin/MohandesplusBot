@@ -418,7 +418,7 @@ namespace {
 
             if (self::isUserAdminAtChannel($admin, $channel)) {
                 
-                $data = Database::getDatabase()->select('admin', 'Helpers', [
+                $data = Database::getDatabase()->select('admin', '*', [
                     'Channel' => $channel
                 ]);
                 foreach ($data as $item) {
