@@ -358,7 +358,7 @@ namespace {
                     if (strlen($helpers) === 0) {
                         $helpers = $helper;
                     } else {
-                        $helpers = ','.$helper;
+                        $helpers .= ','.$helper;
                     }
                     Database::getDatabase()->update('admin',
                         ['Helpers' => $helpers],
