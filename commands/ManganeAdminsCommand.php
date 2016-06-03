@@ -44,9 +44,13 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $data['chat_id'] = $chat_id;
             if (strpos($text, '/deleteadmin') !== false) {
                 $text = substr($text, 12);
+                $dat = [];
+                $data['chat_id'] = $chat_id;
+                $dat['text'] = 'New text: '.$text;
+                Request::sendMessage($dat);
             }
 
-                $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
+            $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
             if (!isset($this->conversation->notes['state'])) {
                 $state = '0';
             } else {
