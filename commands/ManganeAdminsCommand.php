@@ -251,7 +251,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $cData = [];
                     $cData['chat_id'] = $chat_id;
                     $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
-                    $cData['text'] = 'Here with admins:'."\n".var_export($helpers, true);
+                    $cData['text'] = 'Here with admins:'."\n".var_export($helpers, true)."\n".$text;
                     Request::sendMessage($cData);
                     if (empty($text) || !in_array($text, $helpers)) {
                         $data = [];
