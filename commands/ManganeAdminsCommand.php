@@ -248,7 +248,11 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 4:
                     // We assume $text is the name of the admin to be deleted.
                     $channel = $this->conversation->notes['channelName'];
+                    $cData = [];
+                    $cData['chat_id'] = $chat_id;
                     $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
+                    $cData['text'] = 'Here with admins:'."\n".var_export($helpers, true);
+                    Request::sendMessage($cData);
                     if (empty($text) || !in_array($text, $helpers)) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
