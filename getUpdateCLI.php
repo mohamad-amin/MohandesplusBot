@@ -88,7 +88,7 @@ function checkQueueDatabase() {
                         if (strlen($data['Text']) > 200) {
                             $tData['parse_mode'] = 'Markdown';
                             $tData['text'] = $data['Text'].
-                                '[ ]('.str_replace('_', '\_', $data['Photo']).')';
+                                '[ ]('.$data['Photo'].')';
                             Request::sendMessage($tData);
                         } else {
                             $tData['photo'] = $data['Photo'];

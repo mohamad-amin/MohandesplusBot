@@ -32,8 +32,8 @@
       <file leaf-file-name="getUpdateCLI.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="90" column="58" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
+            <state relative-caret-position="308">
+              <caret line="93" column="43" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="43" />
               <folding>
                 <element signature="e#141#173#0#PHP" expanded="true" />
               </folding>
@@ -485,14 +485,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="17202000" />
-    </task>
-    <task id="LOCAL-00017" summary="fixed getHelpersFromChannel bug">
-      <created>1464855060035</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1464855060035</updated>
+      <workItem from="1465024661711" duration="17315000" />
     </task>
     <task id="LOCAL-00018" summary="Fixed add helper to channel bug">
       <created>1464855259721</created>
@@ -830,11 +823,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465045514143</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Fixed Image Preview">
+      <created>1465045573169</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1465045573169</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153564000" />
+    <option name="totallyTimeSpent" value="153677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1222,8 +1222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="90" column="58" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
+        <state relative-caret-position="308">
+          <caret line="93" column="43" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="43" />
           <folding>
             <element signature="e#141#173#0#PHP" expanded="true" />
           </folding>
