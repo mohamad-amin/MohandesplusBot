@@ -108,7 +108,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $this->conversation->notes['state'] = ++$state;
                     $this->conversation->update();
                 case 1:
-                    if (empty($text)) {
+                    if ($message->getForwardFrom() == null) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
@@ -124,7 +124,25 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         );
                         $result = Request::sendMessage($data);
                         break;
+                    } 
+
+                    if ($message->getText() != null) {
+                        $this->conversation->notes['text'] = $text;
+                        $this->conversation->notes['type'] = 1;
                     }
+                    if ($message->getPhoto() != null) {
+                        $this->conversation->notes['photo'] = $message->getPhoto()[0]->getFileId();
+                        $this->conversation->notes['type'] = 2;
+                    }
+                    if ($message->getVideo() != null) {
+                        $this->conversation->notes['video'] = $message->getVideo()->getFileId();
+                        $this->conversation->notes['type'] = 3;
+                    }
+                    if ($message->getDocument() != null) {
+                        $this->conversation->notes['document'] = $message->getDocument()->getFileId();
+                        $this->conversation->notes['type'] = 5;
+                    }
+
                     $this->conversation->notes['message_id'] = $message_id;
                     $this->conversation->notes['state'] = ++$state;
                     $text = '';
@@ -309,6 +327,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     }
                     $databaser->addMessageToDatabase(
                         $this->conversation->notes['message_id'],
+                        $this->conversation->notes['text'],
+                        $this->conversation->notes['photo'],
+                        $this->conversation->notes['video'],
+                        $this->conversation->notes['audio'],
                         '@' . $this->conversation->notes['channelName'],
                         $chat_id,
                         $this->conversation->notes['year'].'-'.
@@ -316,7 +338,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $this->conversation->notes['day'].'-'.
                         $this->conversation->notes['hour'].'-'.
                         $this->conversation->notes['minute'],
-                        ($this->conversation->notes['edit_time'] == null) ? 0 : $this->conversation->notes['edit_time']
+                        ($this->conversation->notes['edit_time'] == null) ? 0 : $this->conversation->notes['edit_time'],
+                        $this->conversation->notes['type']
                     );
                     $data = [];
                     $data['reply_to_message_id'] = $message_id;
@@ -344,9 +367,8 @@ namespace {
 
     class ForwardDatabaser {
 
-        public function addMessageToDatabase($message_id, $channelName, $chatId, $time, $editTime)
-        {
-
+        public function addMessageToDatabase($message_id, $text, $photo, $video, $audio,
+                                             $channelName, $chatId, $time, $editTime, $type) {
             /*$database = new medoo([
                 'database_type' => 'mysql',
                 'database_name' => 'mohandesplusbot',
@@ -366,8 +388,12 @@ namespace {
             $database->insert("queue", [
                 "Channel" => $channelName,
                 "ChatId" => $chatId,
-                "Type" => 4,
-                "Text" => $message_id,
+                "Type" => $type,
+                "Text" => $text,
+                "MessageId" => $message_id,
+                "Photo" => $photo,
+                "Video" => $message_id,
+                "Audio" => $message_id,
                 "Time" => PersianTimeGenerator::getTimeInMilliseconds($time),
                 "EditTime" => $editTime
             ]);
