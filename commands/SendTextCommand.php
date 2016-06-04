@@ -54,9 +54,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
             if (!isset($this->conversation->notes['state'])) {
-                $this->conversation->notes['state'] = '0';
                 $state = '0';
-                $text = '';
             } else {
                 $state = $this->conversation->notes['state'];
             }
@@ -70,38 +68,38 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
             switch ($state) {
                 case 0:
-                    if (empty($text)) {
-                        if (!empty($text)) $data['text'] = 'لطفا کانال را درست انتخاب کنید:';
-                        else $data['text'] = 'کانال را انتخاب کنید:';
-                        $keyboard = [];
-                        $i = 0;
-                        $keyboard[] = ['بیخیال'];
-                        foreach ($channels as $key) {
-                            $j = (int) floor($i/3);
-                            $keyboard[$j][$i % 3] = $key;
-                            $i++;
+                    if (empty($text) || !in_array($text, $channels)) {
+                        if (!in_array($text, $channels)) {
+                            $data = [];
+                            $data['chat_id'] = $chat_id;
+                            $data['text'] = 'متاسفیم. به نظر نمیاید که شما ادمین این کانال باشید :(';
+                            $data['reply_markup'] = new ReplyKeyboardHide(['selective' => true]);
+                            $result = Request::sendMessage($data);
+                            $this->conversation->stop();
+                            $this->telegram->executeCommand("start");
+                            break;
+                        } else {
+                            $data['text'] = 'کانال را انتخاب کنید:';
+                            $keyboard = [];
+                            $i = 0;
+                            $keyboard[] = ['بیخیال'];
+                            foreach ($channels as $key) {
+                                $j = (int) floor($i/3);
+                                $keyboard[$j][$i % 3] = $key;
+                                $i++;
+                            }
+                            $keyboard[] = ['بیخیال'];
+                            $data['reply_markup'] = new ReplyKeyboardMarkup(
+                                [
+                                    'keyboard' => $keyboard,
+                                    'resize_keyboard' => true,
+                                    'one_time_keyboard' => true,
+                                    'selective' => true
+                                ]
+                            );
+                            $result = Request::sendMessage($data);
+                            break;
                         }
-                        $keyboard[] = ['بیخیال'];
-                        $data['reply_markup'] = new ReplyKeyboardMarkup(
-                            [
-                                'keyboard' => $keyboard,
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
-                                'selective' => true
-                            ]
-                        );
-                        $result = Request::sendMessage($data);
-                        break;
-                    }
-                    if (!in_array($text, $channels)) {
-                        $data = [];
-                        $data['chat_id'] = $chat_id;
-                        $data['text'] = 'متاسفیم. به نظر نمیاید که شما ادمین این کانال باشید :(';
-                        $data['reply_markup'] = new ReplyKeyboardHide(['selective' => true]);
-                        $result = Request::sendMessage($data);
-                        $this->conversation->stop();
-                        $this->telegram->executeCommand("start");
-                        break;
                     }
                     $this->conversation->notes['channelName'] = $text;
                     $text = '';
