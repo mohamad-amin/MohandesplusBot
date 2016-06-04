@@ -33,6 +33,8 @@ $mysql_credentials = [
     'database' => 'mohandesplusbot',
 ];
 
+$telegram = null;
+
 try {
     // Create Telegram API object
     $telegram = new Telegram($API_KEY, $BOT_NAME);
@@ -86,11 +88,12 @@ function checkQueueDatabase() {
                         if (strlen($data['Text']) > 200) {
                             $serverResponse = Request::getFile(['file_id' => $data['Photo']]);
                             if ($serverResponse->isOk()) {
-                                $file_name = $serverResponse->getResult()->getFilePath();
+                                $file_name = str_replace('_', '-', $serverResponse->getResult()->getFilePath());
                                 Request::downloadFile($serverResponse->getResult());
                                 $tData['parse_mode'] = 'Markdown';
+                                $path = 'http://scixnet.com/api/mohandesplusbot/images/'.str_replace('_', '-', $file_name);
                                 $tData['text'] = $data['Text'].
-                                    '[ ](http://192.99.103.107/api/mohandesplusbot/images/photo/'.$file_name.')';
+                                    '![  ]('.$path.')';
                                 Request::sendMessage($tData);
                             }
                         } else {

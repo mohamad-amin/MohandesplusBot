@@ -302,7 +302,26 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         Request::sendMessage($data);
                         $data['photo'] = $this->conversation->notes['photo'];
                         $data['caption'] = $this->conversation->notes['messageText'];
+
                         Request::sendPhoto($data);
+
+                        if (strlen($this->conversation->notes['messageText']) > 200) {
+                            $serverResponse = Request::getFile(['file_id' => $this->conversation->notes['photo']]);
+                            if ($serverResponse->isOk()) {
+                                $file_name = str_replace('_', '-', $serverResponse->getResult()->getFilePath());
+                                Request::downloadFile($serverResponse->getResult());
+                                $tData['parse_mode'] = 'Markdown';
+                                $path = 'http://scixnet.com/api/mohandesplusbot/images/'.str_replace('_', '-', $file_name);
+                                $tData['text'] = $this->conversation->notes['messageText'].
+                                    '![  ]('.$path.')';
+                                Request::sendMessage($tData);
+                            }
+                        } else {
+                            $tData['photo'] = $this->conversation->notes['photo'];
+                            $tData['caption'] = $this->conversation->notes['messageText'];
+                            Request::sendPhoto($tData);
+                        }
+
                         if (\PersianTimeGenerator::getTimeInMilliseconds($time) < round(microtime(true))) {
                             $data['text'] = 'هشدار! زمان انتخابی شما قبل از حال است! در این صورت پیام شما در لحظه فرستاده خواهد شد.';
                             Request::sendMessage($data);
