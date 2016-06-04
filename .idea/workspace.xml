@@ -52,8 +52,8 @@
       <file leaf-file-name="SendPhotoCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+            <state relative-caret-position="798">
+              <caret line="317" column="61" selection-start-line="317" selection-start-column="61" selection-end-line="317" selection-end-column="61" />
               <folding>
                 <element signature="e#157#202#0#PHP" expanded="true" />
               </folding>
@@ -473,14 +473,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="12113000" />
-    </task>
-    <task id="LOCAL-00002" summary="I guess basic manage admins command is completed">
-      <created>1464683345149</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1464683345149</updated>
+      <workItem from="1465024661711" duration="12365000" />
     </task>
     <task id="LOCAL-00003" summary="Added manage admins command to start">
       <created>1464684714416</created>
@@ -818,11 +811,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465038108265</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fixing sendphoto bugs">
+      <created>1465038187639</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1465038187639</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148475000" />
+    <option name="totallyTimeSpent" value="148727000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1209,8 +1209,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+        <state relative-caret-position="798">
+          <caret line="317" column="61" selection-start-line="317" selection-start-column="61" selection-end-line="317" selection-end-column="61" />
           <folding>
             <element signature="e#157#202#0#PHP" expanded="true" />
           </folding>

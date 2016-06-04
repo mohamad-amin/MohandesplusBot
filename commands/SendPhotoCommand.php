@@ -299,7 +299,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data = [];
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'پیش نمایش:';
+                        Request::sendMessage($data);
 
+                        $tData = [];
+                        $tData['chat_id'] = $chat_id;
                         if (strlen($this->conversation->notes['messageText']) > 200) {
                             $serverResponse = Request::getFile(['file_id' => $this->conversation->notes['photo']]);
                             if ($serverResponse->isOk()) {
@@ -309,6 +312,9 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 $path = 'http://scixnet.com/api/mohandesplusbot/images/'.str_replace('_', '-', $file_name);
                                 $tData['text'] = $this->conversation->notes['messageText'].
                                     '![  ]('.$path.')';
+                                Request::sendMessage($tData);
+                            } else {
+                                $tData['text'] = 'Server response not ok :('."\n".@$serverResponse;
                                 Request::sendMessage($tData);
                             }
                         } else {
