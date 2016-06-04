@@ -63,7 +63,7 @@ class StartCommand extends UserCommand {
             $keyboard = [
                 ["عکس و متن", "متن"],
                 ["گیف و متن", "فیلم و متن"],
-                ["بازگشت به منو اصلی"]
+                ["بازگشت", "فوروارد"]
             ];
             $send = true;
         } else if ($text == 'متن') {
@@ -83,6 +83,9 @@ class StartCommand extends UserCommand {
         } else if ($text == 'مدیریت ادمین‌ها') {
             $this->conversation->stop();
             $this->telegram->executeCommand('manageadmins');
+        } else if ($text == 'فوروارد') {
+            $this->conversation->stop();
+            $this->telegram->executeCommand('forwardmessage');
         } else {
             $keyboard = [
                 ["مدیریت پست‌ها", "افزودن پست"],
