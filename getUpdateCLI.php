@@ -83,7 +83,7 @@ function checkQueueDatabase() {
                         $result = Request::sendMessage($tData);
                         break;
                     case 2:
-                        if (strlen($data['Photo']) > 200) {
+                        if (strlen($data['Text']) > 200) {
                             $serverResponse = Request::getFile(['file_id' => $data['Photo']]);
                             if ($serverResponse->isOk()) {
                                 $file_name = $serverResponse->getResult()->getFilePath();
@@ -123,15 +123,6 @@ function checkQueueDatabase() {
                     ]
                 ]);
             } else {
-//                $messageId = $result->getMessageId();
-//                $database->update("queue",
-//                    [
-//                        'MessageId' => $messageId,
-//                        'Time' => ($data['Time']+60*$data['EditTime']),
-//                        'EditTime' => 0
-//                    ],
-//                    ['Time' => $time]
-//                );
                 $tData = [];
                 $tData['chat_id'] = $data['ChatId'];
                 $tData['text'] = var_export($result, true);
@@ -141,11 +132,6 @@ function checkQueueDatabase() {
     }
 
 }
-
-//function getDifference($a, $b) {
-//    if ($a - $b < 0) return $b - $a;
-//    else return $a - $b;
-//}
 
 try {
     while (true) {

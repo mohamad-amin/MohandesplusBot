@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="testing downloads">
+    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="test">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/ForwardMessageCommand.php" afterPath="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendPhotoCommand.php" afterPath="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.php" afterPath="$PROJECT_DIR$/bot.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getUpdateCLI.php" afterPath="$PROJECT_DIR$/getUpdateCLI.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
@@ -31,23 +30,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="getUpdateCLI.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getUpdateCLI.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="93" column="61" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
+            <state relative-caret-position="559">
+              <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bot.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bot.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
               <folding>
-                <element signature="e#141#173#0#PHP" expanded="true" />
+                <element signature="e#164#196#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SendTextCommand.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
+      <file leaf-file-name="SendPhotoCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-138">
-              <caret line="342" column="37" selection-start-line="342" selection-start-column="37" selection-end-line="342" selection-end-column="37" />
+            <state relative-caret-position="-2586">
+              <caret line="139" column="29" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -61,7 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bot.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Commands/UserCommands/EchoCommand.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Commands/UserCommands/SlapCommand.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Commands/UserCommands/SurveyCommand.php" />
@@ -92,6 +100,7 @@
         <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
         <option value="$PROJECT_DIR$/getUpdateCLI.php" />
+        <option value="$PROJECT_DIR$/bot.php" />
       </list>
     </option>
   </component>
@@ -465,7 +474,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="7965000" />
+      <workItem from="1465024661711" duration="8791000" />
     </task>
     <task id="LOCAL-00001" summary="Added Show Admins for channel&#10;">
       <created>1464591550586</created>
@@ -796,11 +805,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465031779254</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Added ability to hide link of image">
+      <created>1465034059388</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1465034059388</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144327000" />
+    <option name="totallyTimeSpent" value="145153000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -847,7 +863,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding admin completed" />
     <MESSAGE value="I guess basic manage admins command is completed" />
     <MESSAGE value="Added manage admins command to start" />
     <MESSAGE value="Built AddChannel Command" />
@@ -863,7 +878,6 @@
     <MESSAGE value="small fix in add channel command" />
     <MESSAGE value="Now showing only valid channels in sendTextCommand" />
     <MESSAGE value="bug fix" />
-    <MESSAGE value="test" />
     <MESSAGE value="Now everything is working correctly" />
     <MESSAGE value="Added Forward Message Command" />
     <MESSAGE value="bug fixes" />
@@ -872,7 +886,9 @@
     <MESSAGE value="ForwardMessageCommand fixed with no tagging" />
     <MESSAGE value="fixed bugs" />
     <MESSAGE value="testing downloads" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing downloads" />
+    <MESSAGE value="Added ability to hide link of image" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -983,13 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-187">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1136,14 +1145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="342" column="37" selection-start-line="342" selection-start-column="37" selection-end-line="342" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Entities/Message.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -1172,26 +1173,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="137" column="24" selection-start-line="137" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
-          <folding>
-            <element signature="e#157#202#0#PHP" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="342" column="37" selection-start-line="342" selection-start-column="37" selection-end-line="342" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="151" column="20" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
+        <state relative-caret-position="-2586">
+          <caret line="139" column="29" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="93" column="61" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
+        <state relative-caret-position="559">
+          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
           <folding>
-            <element signature="e#141#173#0#PHP" expanded="true" />
+            <element signature="e#164#196#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
