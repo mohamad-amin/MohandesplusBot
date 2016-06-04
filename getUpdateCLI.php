@@ -91,7 +91,7 @@ function checkQueueDatabase() {
                                 '[ ]('.$data['Photo'].')';
                             Request::sendMessage($tData);
                         } else {
-                            $tData['photo'] = $data['photo'];
+                            $tData['photo'] = $data['Photo'];
                             $tData['caption'] = $data['Text'];
                             Request::sendPhoto($tData);
                         }
