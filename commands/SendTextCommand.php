@@ -55,6 +55,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
             if (!isset($this->conversation->notes['state'])) {
                 $state = '0';
+                $this->conversation->notes['state'] = 0;
+                $text = '';
             } else {
                 $state = $this->conversation->notes['state'];
             }
@@ -90,7 +92,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $result = Request::sendMessage($data);
                         break;
                     }
-                    if (!in_array($user->getUserName(), $channels)) {
+                    if (!in_array($text, $channels)) {
                         $data = [];
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'متاسفیم. به نظر نمیاید که شما ادمین این کانال باشید :(';
