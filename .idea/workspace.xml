@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendPhotoCommand.php" afterPath="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getUpdateCLI.php" afterPath="$PROJECT_DIR$/getUpdateCLI.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +29,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="getUpdateCLI.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="90" column="58" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
+              <folding>
+                <element signature="e#141#173#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StartCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
+            <state relative-caret-position="477">
               <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
               <folding />
             </state>
@@ -49,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SendPhotoCommand.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SendPhotoCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
+            <state relative-caret-position="330">
               <caret line="347" column="86" selection-start-line="347" selection-start-column="86" selection-end-line="347" selection-end-column="86" />
               <folding>
                 <element signature="e#157#202#0#PHP" expanded="true" />
@@ -97,9 +109,9 @@
         <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
         <option value="$PROJECT_DIR$/bot.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" />
-        <option value="$PROJECT_DIR$/getUpdateCLI.php" />
         <option value="$PROJECT_DIR$/commands/StartCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
+        <option value="$PROJECT_DIR$/getUpdateCLI.php" />
       </list>
     </option>
   </component>
@@ -473,14 +485,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="17142000" />
-    </task>
-    <task id="LOCAL-00016" summary="fixed bugs">
-      <created>1464690195681</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1464690195681</updated>
+      <workItem from="1465024661711" duration="17202000" />
     </task>
     <task id="LOCAL-00017" summary="fixed getHelpersFromChannel bug">
       <created>1464855060035</created>
@@ -818,11 +823,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465044937218</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Fixed Image Preview">
+      <created>1465045514143</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1465045514143</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153504000" />
+    <option name="totallyTimeSpent" value="153564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1166,16 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="89" column="40" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
-          <folding>
-            <element signature="e#141#173#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bot.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1194,7 +1196,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
+        <state relative-caret-position="477">
           <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
           <folding />
         </state>
@@ -1210,10 +1212,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
+        <state relative-caret-position="330">
           <caret line="347" column="86" selection-start-line="347" selection-start-column="86" selection-end-line="347" selection-end-column="86" />
           <folding>
             <element signature="e#157#202#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="90" column="58" selection-start-line="90" selection-start-column="58" selection-end-line="90" selection-end-column="58" />
+          <folding>
+            <element signature="e#141#173#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
