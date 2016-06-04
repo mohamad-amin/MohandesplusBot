@@ -108,7 +108,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $this->conversation->notes['state'] = ++$state;
                     $this->conversation->update();
                 case 1:
-                    if ($message->getForwardFrom() == null) {
+                    if ($message->getForwardDate() == null) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
@@ -129,6 +129,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $this->conversation->notes['type'] = 1;
                     if ($text != null) {
                         $this->conversation->notes['text'] = $text."\n".'@mohandes_plus';
+                    } else if ($message->getCaption() != null) {
+                        $this->conversation->notes['text'] = $message->getCaption()."\n".'@mohandes_plus';
                     } else {
                         $this->conversation->notes['text'] = '@mohandes_plus';
                     }
@@ -144,7 +146,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $this->conversation->notes['document'] = $message->getDocument()->getFileId();
                         $this->conversation->notes['type'] = 5;
                     }
-
                     $this->conversation->notes['state'] = ++$state;
                     $text = '';
                     $this->conversation->update();
