@@ -36,7 +36,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $user = $message->getFrom();
             $chat_id = $chat->getId();
             $user_id = $user->getId();
-            $text = $message->getText(true);
+            $text = $message->getText();
             $message_id = $message->getMessageId();      //Get message Id
 
             $data = [];
