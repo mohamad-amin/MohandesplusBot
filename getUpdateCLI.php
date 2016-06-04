@@ -8,8 +8,8 @@
  */
 
 require __DIR__ . '/vendor/autoload.php';
-use \Longman\TelegramBot\Telegram;
-use \Longman\TelegramBot\Request;
+use Longman\TelegramBot\Request;
+use Longman\TelegramBot\Telegram;
 
 ignore_user_abort(true);//if caller closes the connection (if initiating with cURL from another PHP, this allows you to end the calling PHP script without ending this one)
 set_time_limit(0);
@@ -92,6 +92,9 @@ function checkQueueDatabase() {
                         $result = Request::sendVideo($tData);
                         break;
                     case 4:
+                        $tData['from_chat_id'] = $data['ChatId'];
+                        $tData['message_id'] = $data['Text'];
+                        $result = Request::forwardMessage($tData);
                         break;
                     case 5:
                         $tData['document'] = $data['Photo'];
