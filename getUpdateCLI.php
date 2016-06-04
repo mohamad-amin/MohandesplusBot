@@ -43,6 +43,7 @@ try {
     $telegram->setLogRequests(true);
     $telegram->setLogPath($BOT_NAME . '.log');
     $telegram->setLogVerbosity(3);
+    $telegram->setDownloadPath('images');
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // log telegram errors
     echo $e;
@@ -85,6 +86,11 @@ function checkQueueDatabase() {
                         $tData['photo'] = $data['Photo'];
                         $tData['caption'] = $data['Text'];
                         $result = Request::sendPhoto($tData);
+                        $serverResponse = Request::getFile(['file_id' => $data['Photo']]);
+                        if ($serverResponse->isOk()) {
+                            $file_name = $serverResponse->getResult()->getFilePath();
+                            Request::downloadFile($serverResponse->getResult());
+                        }
                         break;
                     case 3:
                         $tData['video'] = $data['Video'];
