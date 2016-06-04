@@ -37,7 +37,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
         public function execute() {
 
             $databaser = new \TextDatabaser();
-
             $message = $this->getMessage();              // get Message info
 
             $chat = $message->getChat();
@@ -51,6 +50,14 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $data['reply_to_message_id'] = $message_id;
             $data['chat_id'] = $chat_id;
             $channels = \AdminDatabase::getHelpersChannels($user->getUsername());
+            if ($text == 'متن') {
+                $text = '';
+            } else {
+                $tData = [];
+                $tData['chat_id'] = $chat_id;
+                $tData['text'] = $text;
+                Request::sendMessage($tData);
+            }
 
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
             if (!isset($this->conversation->notes['state'])) {
