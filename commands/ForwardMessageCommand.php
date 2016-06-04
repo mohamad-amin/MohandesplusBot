@@ -124,9 +124,9 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         );
                         $result = Request::sendMessage($data);
                         break;
-                    } 
+                    }
 
-                    if ($message->getText() != null) {
+                    if ($text != null) {
                         $this->conversation->notes['text'] = $text;
                         $this->conversation->notes['type'] = 1;
                     }
@@ -300,9 +300,29 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['text'] = 'پیش نمایش:';
                         Request::sendMessage($data);
                         $tData['chat_id'] = $chat_id;
-                        $tData['from_chat_id'] = $chat_id;
-                        $tData['message_id'] = $this->conversation->notes['message_id'];
-                        Request::forwardMessage($tData);
+                        switch ($this->conversation->notes['type']) {
+                            case 1:
+                                $tData['text'] = $this->conversation->notes['text'];
+                                $result = Request::sendMessage($tData);
+                                break;
+                            case 2:
+                                $tData['photo'] = $this->conversation->notes['photo'];
+                                $tData['caption'] = $this->conversation->notes['text'];
+                                $result = Request::sendPhoto($tData);
+                                break;
+                            case 3:
+                                $tData['video'] = $this->conversation->notes['video'];
+                                $tData['caption'] = $this->conversation->notes['text'];
+                                $result = Request::sendVideo($tData);
+                                break;
+                            case 4:
+                                break;
+                            case 5:
+                                $tData['document'] = $this->conversation->notes['photo'];
+                                $tData['caption'] = $this->conversation->notes['text'];
+                                $result = Request::sendDocument($tData);
+                                break;
+                        }
                         $data = [];
                         $data['chat_id'] = $chat_id;
                         if (\PersianTimeGenerator::getTimeInMilliseconds($time) < round(microtime(true))) {
@@ -392,8 +412,8 @@ namespace {
                 "Text" => $text,
                 "MessageId" => $message_id,
                 "Photo" => $photo,
-                "Video" => $message_id,
-                "Audio" => $message_id,
+                "Video" => $video,
+                "Audio" => $audio,
                 "Time" => PersianTimeGenerator::getTimeInMilliseconds($time),
                 "EditTime" => $editTime
             ]);
