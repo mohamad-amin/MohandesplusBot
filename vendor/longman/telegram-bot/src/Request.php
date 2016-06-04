@@ -237,11 +237,11 @@ class Request
      */
     public static function downloadFile(File $file)
     {
-        $path = str_replace('_', '-', $file->getFilePath());
+        $path = $file->getFilePath();
 
         //Create the directory
         $basepath = self::$telegram->getDownloadPath();
-        $loc_path = $basepath . '/' . $path;
+        $loc_path = $basepath . '/' . str_replace('_', '-', $path);
 
         $dirname = dirname($loc_path);
         if (!is_dir($dirname)) {
