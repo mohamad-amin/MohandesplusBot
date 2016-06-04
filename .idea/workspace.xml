@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="test">
+    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="fixing sendphoto bugs">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.php" afterPath="$PROJECT_DIR$/bot.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendPhotoCommand.php" afterPath="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getUpdateCLI.php" afterPath="$PROJECT_DIR$/getUpdateCLI.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,9 +34,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="721">
               <caret line="102" column="25" selection-start-line="87" selection-start-column="24" selection-end-line="102" selection-end-column="25" />
-              <folding>
-                <element signature="e#141#173#0#PHP" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,9 +52,11 @@
       <file leaf-file-name="SendPhotoCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="314" column="90" selection-start-line="314" selection-start-column="90" selection-end-line="314" selection-end-column="90" />
-              <folding />
+            <state relative-caret-position="276">
+              <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+              <folding>
+                <element signature="e#157#202#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -476,14 +473,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="12028000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added Show Admins for channel&#10;">
-      <created>1464591550586</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1464591550586</updated>
+      <workItem from="1465024661711" duration="12113000" />
     </task>
     <task id="LOCAL-00002" summary="I guess basic manage admins command is completed">
       <created>1464683345149</created>
@@ -821,11 +811,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465034865590</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fixing sendphoto bugs">
+      <created>1465038108265</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1465038108265</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148390000" />
+    <option name="totallyTimeSpent" value="148475000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,7 +869,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I guess basic manage admins command is completed" />
     <MESSAGE value="Added manage admins command to start" />
     <MESSAGE value="Built AddChannel Command" />
     <MESSAGE value="improvements to add channel command" />
@@ -897,7 +893,8 @@
     <MESSAGE value="testing downloads" />
     <MESSAGE value="Added ability to hide link of image" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="fixing sendphoto bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing sendphoto bugs" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1190,9 +1187,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-          <folding>
-            <element signature="e#164#196#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,9 +1195,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="721">
           <caret line="102" column="25" selection-start-line="87" selection-start-column="24" selection-end-line="102" selection-end-column="25" />
-          <folding>
-            <element signature="e#141#173#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1216,9 +1209,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="314" column="90" selection-start-line="314" selection-start-column="90" selection-end-line="314" selection-end-column="90" />
-          <folding />
+        <state relative-caret-position="276">
+          <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+          <folding>
+            <element signature="e#157#202#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

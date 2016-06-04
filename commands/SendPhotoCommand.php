@@ -299,11 +299,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data = [];
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'پیش نمایش:';
-                        Request::sendMessage($data);
-                        $data['photo'] = $this->conversation->notes['photo'];
-                        $data['caption'] = $this->conversation->notes['messageText'];
-
-                        Request::sendPhoto($data);
 
                         if (strlen($this->conversation->notes['messageText']) > 200) {
                             $serverResponse = Request::getFile(['file_id' => $this->conversation->notes['photo']]);
