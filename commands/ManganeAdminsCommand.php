@@ -457,6 +457,15 @@ namespace {
             ]);
         }
 
+        public static function removeChannel($channel, $admin) {
+            return Database::getDatabase()->delete('admin',[
+                'AND' => [
+                    'Channel' => $channel,
+                    'Admin' => $admin
+                ]
+            ]);
+        }
+
         public static function getAdminsChannels($user) {
 
             $data = Database::getDatabase()->select('admin', '*', [
