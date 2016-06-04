@@ -287,6 +287,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $text = '';
                     $this->conversation->update();
                 case 8:
+                    $path = '';
                     if (empty($text) || !($text == 'ارسال')) {
                         
                         $time = $this->conversation->notes['year'].'-'.
@@ -344,7 +345,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     }
                     $databaser->addMessageToDatabase(
                         $this->conversation->notes['messageText'] . "\n" . '@mohandes_plus',
-                        $this->conversation->notes['photo'],
+                        strlen($this->conversation->notes['messageText']) > 200 ? $path : $this->conversation->notes['photo'],
                         '@' . $this->conversation->notes['channelName'],
                         $chat_id,
                         $this->conversation->notes['year'].'-'.

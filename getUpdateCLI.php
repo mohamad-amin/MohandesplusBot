@@ -86,20 +86,14 @@ function checkQueueDatabase() {
                         break;
                     case 2:
                         if (strlen($data['Text']) > 200) {
-                            $serverResponse = Request::getFile(['file_id' => $data['Photo']]);
-                            if ($serverResponse->isOk()) {
-                                $file_name = $serverResponse->getResult()->getFilePath();
-                                Request::downloadFile($serverResponse->getResult());
-                                $tData['parse_mode'] = 'Markdown';
-                                $path = 'http://scixnet.com/api/mohandesplusbot/images/'.$file_name;
-                                $tData['text'] = $this->conversation->notes['messageText'].
-                                    '[ ]('.$path.')';
-                                Request::sendMessage($tData);
-                            }
+                            $tData['parse_mode'] = 'Markdown';
+                            $tData['text'] = $data['Text'].
+                                '[ ]('.$data['Photo'].')';
+                            Request::sendMessage($tData);
                         } else {
-                            $tData['photo'] = $data['Photo'];
+                            $tData['photo'] = $data['photo'];
                             $tData['caption'] = $data['Text'];
-                            $result = Request::sendPhoto($tData);
+                            Request::sendPhoto($tData);
                         }
                         break;
                     case 3:
