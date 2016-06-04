@@ -54,8 +54,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
             if (!isset($this->conversation->notes['state'])) {
+                $this->conversation->notes['state'] = '0';
                 $state = '0';
-                $this->conversation->notes['state'] = 0;
                 $text = '';
             } else {
                 $state = $this->conversation->notes['state'];
@@ -81,6 +81,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $keyboard[$j][$i % 3] = $key;
                             $i++;
                         }
+                        $keyboard[] = ['بیخیال'];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
