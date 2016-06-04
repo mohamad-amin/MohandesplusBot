@@ -92,8 +92,8 @@ function checkQueueDatabase() {
                                 Request::downloadFile($serverResponse->getResult());
                                 $tData['parse_mode'] = 'Markdown';
                                 $path = 'http://scixnet.com/api/mohandesplusbot/images/'.$file_name;
-                                $tData['text'] = $data['Text'].
-                                    '[  ]('.$path.')';
+                                $tData['text'] = $this->conversation->notes['messageText'].
+                                    '[ ]('.$path.')';
                                 Request::sendMessage($tData);
                             }
                         } else {
