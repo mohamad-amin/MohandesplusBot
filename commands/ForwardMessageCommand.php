@@ -126,9 +126,11 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         break;
                     }
 
+                    $this->conversation->notes['type'] = 1;
                     if ($text != null) {
-                        $this->conversation->notes['text'] = $text;
-                        $this->conversation->notes['type'] = 1;
+                        $this->conversation->notes['text'] = $text."\n".'@mohandes_plus';
+                    } else {
+                        $this->conversation->notes['text'] = '@mohandes_plus';
                     }
                     if ($message->getPhoto() != null) {
                         $this->conversation->notes['photo'] = $message->getPhoto()[0]->getFileId();
@@ -143,7 +145,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $this->conversation->notes['type'] = 5;
                     }
 
-                    $this->conversation->notes['message_id'] = $message_id;
                     $this->conversation->notes['state'] = ++$state;
                     $text = '';
                     $this->conversation->update();
@@ -346,11 +347,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         break;
                     }
                     $databaser->addMessageToDatabase(
-                        $this->conversation->notes['message_id'],
                         $this->conversation->notes['text'],
                         $this->conversation->notes['photo'],
                         $this->conversation->notes['video'],
-                        $this->conversation->notes['audio'],
+                        null,
                         '@' . $this->conversation->notes['channelName'],
                         $chat_id,
                         $this->conversation->notes['year'].'-'.
@@ -358,7 +358,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $this->conversation->notes['day'].'-'.
                         $this->conversation->notes['hour'].'-'.
                         $this->conversation->notes['minute'],
-                        ($this->conversation->notes['edit_time'] == null) ? 0 : $this->conversation->notes['edit_time'],
                         $this->conversation->notes['type']
                     );
                     $data = [];
@@ -387,8 +386,8 @@ namespace {
 
     class ForwardDatabaser {
 
-        public function addMessageToDatabase($message_id, $text, $photo, $video, $audio,
-                                             $channelName, $chatId, $time, $editTime, $type) {
+        public function addMessageToDatabase($text, $photo, $video, $audio,
+                                             $channelName, $chatId, $time, $type) {
             /*$database = new medoo([
                 'database_type' => 'mysql',
                 'database_name' => 'mohandesplusbot',
@@ -408,14 +407,12 @@ namespace {
             $database->insert("queue", [
                 "Channel" => $channelName,
                 "ChatId" => $chatId,
-                "Type" => $type,
+                "Type" => intval($type),
                 "Text" => $text,
-                "MessageId" => $message_id,
                 "Photo" => $photo,
                 "Video" => $video,
                 "Audio" => $audio,
                 "Time" => PersianTimeGenerator::getTimeInMilliseconds($time),
-                "EditTime" => $editTime
             ]);
         }
 
