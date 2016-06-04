@@ -285,6 +285,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $tData['from_chat_id'] = $chat_id;
                         $tData['message_id'] = $this->conversation->notes['message_id'];
                         Request::forwardMessage($tData);
+                        $data = [];
+                        $data['chat_id'] = $chat_id;
                         if (\PersianTimeGenerator::getTimeInMilliseconds($time) < round(microtime(true))) {
                             $data['text'] = 'هشدار! زمان انتخابی شما قبل از حال است! در این صورت پیام شما در لحظه فرستاده خواهد شد.';
                             Request::sendMessage($data);
@@ -297,6 +299,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 'selective' => true
                             ]
                         );
+                        $data = [];
+                        $data['chat_id'] = $chat_id;
                         $data['reply_markup'] = $reply_keyboard_markup;
                         $data['text'] = 'برای ارسال پست بالا در تاریخ و زمان '.
                             \PersianDateFormatter::format($this->conversation->notes).' دکمه‌ی ارسال را کلیک کنید. ';
