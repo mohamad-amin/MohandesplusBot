@@ -32,8 +32,8 @@
       <file leaf-file-name="getUpdateCLI.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="93" column="99" selection-start-line="93" selection-start-column="99" selection-end-line="93" selection-end-column="99" />
+            <state relative-caret-position="343">
+              <caret line="90" column="45" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
               <folding>
                 <element signature="e#141#173#0#PHP" expanded="true" />
               </folding>
@@ -475,14 +475,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="14140000" />
-    </task>
-    <task id="LOCAL-00007" summary="testing">
-      <created>1464687145696</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1464687145696</updated>
+      <workItem from="1465024661711" duration="14349000" />
     </task>
     <task id="LOCAL-00008" summary="testing">
       <created>1464687366416</created>
@@ -820,11 +813,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465042136981</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="fixing sendphoto bugs">
+      <created>1465042510773</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1465042510773</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150502000" />
+    <option name="totallyTimeSpent" value="150711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1212,8 +1212,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="93" column="99" selection-start-line="93" selection-start-column="99" selection-end-line="93" selection-end-column="99" />
+        <state relative-caret-position="343">
+          <caret line="90" column="45" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
           <folding>
             <element signature="e#141#173#0#PHP" expanded="true" />
           </folding>

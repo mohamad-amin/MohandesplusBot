@@ -88,7 +88,7 @@ function checkQueueDatabase() {
                         if (strlen($data['Text']) > 200) {
                             $serverResponse = Request::getFile(['file_id' => $data['Photo']]);
                             if ($serverResponse->isOk()) {
-                                $file_name = str_replace('_', '-', $serverResponse->getResult()->getFilePath());
+                                $file_name = $serverResponse->getResult()->getFilePath();
                                 Request::downloadFile($serverResponse->getResult());
                                 $tData['parse_mode'] = 'Markdown';
                                 $path = 'http://scixnet.com/api/mohandesplusbot/images/'.$file_name;
