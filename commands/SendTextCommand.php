@@ -69,7 +69,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             switch ($state) {
                 case 0:
                     if (empty($text) || !in_array($text, $channels)) {
-                        if (!in_array($text, $channels)) {
+                        if (!empty($text) && !in_array($text, $channels)) {
                             $data = [];
                             $data['chat_id'] = $chat_id;
                             $data['text'] = 'متاسفیم. به نظر نمیاید که شما ادمین این کانال باشید :(';
