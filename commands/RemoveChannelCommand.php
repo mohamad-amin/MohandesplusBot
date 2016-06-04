@@ -15,7 +15,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
     use Longman\TelegramBot\Request;
     use Longman\TelegramBot\Telegram;
 
-    class AddChannelCommand extends UserCommand {
+    class RemoveChannelCommand extends UserCommand {
 
         protected $name = 'removechannel';                      //your command's name
         protected $description = 'حذف کانال';          //Your command description
