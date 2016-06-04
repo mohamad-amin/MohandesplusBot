@@ -44,10 +44,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $data['chat_id'] = $chat_id;
             if (strpos($text, '/deleteadmin') !== false) {
                 $text = substr($text, 12);
-                $dat = [];
-                $data['chat_id'] = $chat_id;
-                $dat['text'] = 'New text: '.$text;
-                Request::sendMessage($dat);
             }
 
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
@@ -179,7 +175,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             if ($helpers != null && count($helpers) > 0) {
                                 $tData['text'] = '';
                                 for ($i = 0; $i < count($helpers); $i++) {
-                                    $tData['text'] .= $i . '. @' . $helpers[$i] . "\n";
+                                    $tData['text'] .= ($i+1) . '. @' . $helpers[$i] . "\n";
                                 }
                             } else {
                                 $tData['text'] = 'کانال ' . '@' . $this->conversation->notes['channelName'] . ' ادمینی ندارد.';
@@ -195,7 +191,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 Request::sendMessage($tData);
                                 $tData['text'] = '';
                                 for ($i = 0; $i < count($helpers); $i++) {
-                                    $tData['text'] .= $i . '. @' . $helpers[$i] . "\n" . 'حذف: ' . '/deleteadmin' . $helpers[$i] . "\n";
+                                    $tData['text'] .= ($i+1) . '. @' . $helpers[$i] . "\n" . 'حذف: ' . '/deleteadmin' . $helpers[$i] . "\n";
                                 }
                                 $this->conversation->notes['state'] = 4;
                                 $this->conversation->update();
@@ -252,17 +248,14 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 4:
                     // We assume $text is the name of the admin to be deleted.
                     $channel = $this->conversation->notes['channelName'];
-                    $cData = [];
-                    $cData['chat_id'] = $chat_id;
                     $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
-                    $cData['text'] = 'Here with admins:'."\n".var_export($helpers, true)."\n".'And text:'."\n".$text;
-                    Request::sendMessage($cData);
                     if (empty($text) || !in_array($text, $helpers)) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'ادمین مورد نظر را انتخاب کنید:';
                         Request::sendMessage($data);
+                        $tData['chat_id'] = $chat_id;
                         $tData['text'] = '';
                         for ($i = 0; $i < count($helpers); $i++) {
                             $tData['text'] .= $i . '. @' . $helpers[$i] . "\n" . 'حذف: ' . '/deleteadmin' . $helpers[$i] . "\n";
