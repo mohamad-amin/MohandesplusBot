@@ -42,8 +42,8 @@
       <file leaf-file-name="Request.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="243" column="43" selection-start-line="243" selection-start-column="43" selection-end-line="243" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -473,14 +473,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="13499000" />
-    </task>
-    <task id="LOCAL-00005" summary="improvements to add channel command">
-      <created>1464686802782</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1464686802782</updated>
+      <workItem from="1465024661711" duration="13768000" />
     </task>
     <task id="LOCAL-00006" summary="bug fix">
       <created>1464687017261</created>
@@ -818,11 +811,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465038677753</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="fixing sendphoto bugs">
+      <created>1465041871360</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1465041871360</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149861000" />
+    <option name="totallyTimeSpent" value="150130000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1210,8 +1210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="243" column="43" selection-start-line="243" selection-start-column="43" selection-end-line="243" selection-end-column="43" />
           <folding />
         </state>
       </provider>
