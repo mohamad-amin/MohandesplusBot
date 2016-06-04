@@ -135,7 +135,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $this->conversation->notes['text'] = '@mohandes_plus';
                     }
                     if ($message->getPhoto() != null) {
-                        $this->conversation->notes['photo'] = $message->getPhoto()[0]->getFileId();
+                        $this->conversation->notes['photo'] =
+                            $message->getPhoto()[count($message->getPhoto())-1]->getFileId();
                         $this->conversation->notes['type'] = 2;
                     }
                     if ($message->getVideo() != null) {

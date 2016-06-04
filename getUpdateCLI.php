@@ -83,13 +83,20 @@ function checkQueueDatabase() {
                         $result = Request::sendMessage($tData);
                         break;
                     case 2:
-                        $tData['photo'] = $data['Photo'];
-                        $tData['caption'] = $data['Text'];
-                        $result = Request::sendPhoto($tData);
-                        $serverResponse = Request::getFile(['file_id' => $data['Photo']]);
-                        if ($serverResponse->isOk()) {
-                            $file_name = $serverResponse->getResult()->getFilePath();
-                            Request::downloadFile($serverResponse->getResult());
+                        if (strlen($data['Photo']) > 200) {
+                            $serverResponse = Request::getFile(['file_id' => $data['Photo']]);
+                            if ($serverResponse->isOk()) {
+                                $file_name = $serverResponse->getResult()->getFilePath();
+                                Request::downloadFile($serverResponse->getResult());
+                                $tData['parse_mode'] = 'Markdown';
+                                $tData['text'] = $data['Text'].
+                                    '[ ](http://192.99.103.107/api/mohandesplusbot/images/photo/'.$file_name.')';
+                                Request::sendMessage($tData);
+                            }
+                        } else {
+                            $tData['photo'] = $data['Photo'];
+                            $tData['caption'] = $data['Text'];
+                            $result = Request::sendPhoto($tData);
                         }
                         break;
                     case 3:
