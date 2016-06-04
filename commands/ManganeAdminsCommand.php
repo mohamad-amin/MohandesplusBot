@@ -347,6 +347,20 @@ namespace {
             return false;
         }
 
+        public static function getHelpersChannels($helper) {
+            $data = Database::getDatabase()->select('admin', '*', [
+                'OR' => [
+                    'Helpers' => $helper,
+                    'Helpers[~]' => [$helper.',', ','.$helper]
+                ]
+            ]);
+            $channels = [];
+            foreach ($data as $channel) {
+                $channels[] = $channel['Channel'];
+            }
+            return $channels;
+        }
+
         public static function addHelperToChannel($channel, $admin, $helper) {
 
             if (self::isUserAdminAtChannel($admin, $channel)) {
@@ -440,7 +454,7 @@ namespace {
             ]);
 
             foreach ($data as $row) {
-                if ($row['Admin'] == $user || strpos($row['Helpers'], $user) !== false) {
+                if (strpos($row['Helpers'], $user) !== false) {
                     return true;
                 }
             }
