@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/catfan/medoo" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/longman/telegram-bot" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mtdowling/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/peppeocchi/php-cron-scheduler" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sallar/jdatetime" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/catfan/medoo" />
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/longman/telegram-bot" />
+          <root url="file://$MODULE_DIR$/vendor/mtdowling/cron-expression" />
+          <root url="file://$MODULE_DIR$/vendor/peppeocchi/php-cron-scheduler" />
+          <root url="file://$MODULE_DIR$/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/vendor/sallar/jdatetime" />
+          <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/catfan/medoo" />
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/longman/telegram-bot" />
+          <root url="file://$MODULE_DIR$/vendor/mtdowling/cron-expression" />
+          <root url="file://$MODULE_DIR$/vendor/peppeocchi/php-cron-scheduler" />
+          <root url="file://$MODULE_DIR$/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/vendor/sallar/jdatetime" />
+          <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
