@@ -52,11 +52,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $channels = \AdminDatabase::getHelpersChannels($user->getUsername());
             if ($text == 'متن') {
                 $text = '';
-            } else {
-                $tData = [];
-                $tData['chat_id'] = $chat_id;
-                $tData['text'] = $text;
-                Request::sendMessage($tData);
             }
 
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());

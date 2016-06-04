@@ -9,12 +9,12 @@
 
 namespace Longman\TelegramBot\Commands\UserCommands {
 
+    use Longman\TelegramBot\Commands\UserCommand;
+    use Longman\TelegramBot\Conversation;
     use Longman\TelegramBot\Entities\ReplyKeyboardHide;
+    use Longman\TelegramBot\Entities\ReplyKeyboardMarkup;
     use Longman\TelegramBot\Request;
     use Longman\TelegramBot\Telegram;
-    use Longman\TelegramBot\Conversation;
-    use Longman\TelegramBot\Commands\UserCommand;
-    use Longman\TelegramBot\Entities\ReplyKeyboardMarkup;
 
     class SendVideoCommand extends UserCommand {
 
@@ -36,11 +36,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
         public function execute() {
 
-            $channels = [];
             $databaser = new \VideoDatabaser();
-            $channels['Mohandestest'] = array('LeMohamadAmin',
-                'Alintel91', 'Mohandes_norouzi', 'AHKhodabakhsh', 'mohandesplus_admin');
-
             $message = $this->getMessage();              // get Message info
 
             $chat = $message->getChat();
@@ -53,6 +49,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $data = [];
             $data['reply_to_message_id'] = $message_id;
             $data['chat_id'] = $chat_id;
+            $channels = \AdminDatabase::getHelpersChannels($user->getUsername());
+            if ($text == 'فیلم و متن') {
+                $text = '';
+            }
 
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
             if (!isset($this->conversation->notes['state'])) {
@@ -70,37 +70,38 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
             switch ($state) {
                 case 0:
-                    if (empty($text) || $channels[$text] == null) {
-                        if (!empty($text)) $data['text'] = 'لطفا کانال را درست انتخاب کنید:';
-                        else $data['text'] = 'کانال را انتخاب کنید:';
-                        $keyboard = [];
-                        $i = 0;
-                        foreach ($channels as $key => $value) {
-                            $j = (int) floor($i/3);
-                            $keyboard[$j][$i%3] = $key;
-                            $i++;
+                    if (empty($text) || !in_array($text, $channels)) {
+                        if (!empty($text) && !in_array($text, $channels)) {
+                            $data = [];
+                            $data['chat_id'] = $chat_id;
+                            $data['text'] = 'متاسفیم. به نظر نمیاید که شما ادمین این کانال باشید :(';
+                            $data['reply_markup'] = new ReplyKeyboardHide(['selective' => true]);
+                            $result = Request::sendMessage($data);
+                            $this->conversation->stop();
+                            $this->telegram->executeCommand("start");
+                            break;
+                        } else {
+                            $data['text'] = 'کانال را انتخاب کنید:';
+                            $keyboard = [];
+                            $i = 0;
+                            $keyboard[] = ['بیخیال'];
+                            foreach ($channels as $key) {
+                                $j = (int) floor($i/3);
+                                $keyboard[$j][$i % 3] = $key;
+                                $i++;
+                            }
+                            $keyboard[] = ['بیخیال'];
+                            $data['reply_markup'] = new ReplyKeyboardMarkup(
+                                [
+                                    'keyboard' => $keyboard,
+                                    'resize_keyboard' => true,
+                                    'one_time_keyboard' => true,
+                                    'selective' => true
+                                ]
+                            );
+                            $result = Request::sendMessage($data);
+                            break;
                         }
-                        $keyboard[] = ['بیخیال'];
-                        $data['reply_markup'] = new ReplyKeyboardMarkup(
-                            [
-                                'keyboard' => $keyboard,
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
-                                'selective' => true
-                            ]
-                        );
-                        $result = Request::sendMessage($data);
-                        break;
-                    }
-                    if (!in_array($user->getUserName(), $channels[$text])) {
-                        $data = [];
-                        $data['chat_id'] = $chat_id;
-                        $data['text'] = 'متاسفیم. به نظر نمیاید که شما ادمین این کانال باشید :(';
-                        $data['reply_markup'] = new ReplyKeyboardHide(['selective' => true]);
-                        $result = Request::sendMessage($data);
-                        $this->conversation->stop();
-                        $this->telegram->executeCommand("start");
-                        break;
                     }
                     $this->conversation->notes['channelName'] = $text;
                     $text = '';
