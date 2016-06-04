@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" afterPath="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getUpdateCLI.php" afterPath="$PROJECT_DIR$/getUpdateCLI.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,21 +29,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="getUpdateCLI.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getUpdateCLI.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="721">
-              <caret line="102" column="25" selection-start-line="87" selection-start-column="24" selection-end-line="102" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="397">
+              <caret line="93" column="99" selection-start-line="93" selection-start-column="99" selection-end-line="93" selection-end-column="99" />
+              <folding>
+                <element signature="e#141#173#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Request.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Request.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="243" column="43" selection-start-line="243" selection-start-column="43" selection-end-line="243" selection-end-column="43" />
+            <state relative-caret-position="-774">
+              <caret line="260" column="44" selection-start-line="260" selection-start-column="44" selection-end-line="260" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -97,9 +99,9 @@
         <option value="$PROJECT_DIR$/commands/SendGifCommand.php" />
         <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
         <option value="$PROJECT_DIR$/bot.php" />
-        <option value="$PROJECT_DIR$/getUpdateCLI.php" />
         <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" />
+        <option value="$PROJECT_DIR$/getUpdateCLI.php" />
       </list>
     </option>
   </component>
@@ -473,14 +475,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="13768000" />
-    </task>
-    <task id="LOCAL-00006" summary="bug fix">
-      <created>1464687017261</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1464687017261</updated>
+      <workItem from="1465024661711" duration="14140000" />
     </task>
     <task id="LOCAL-00007" summary="testing">
       <created>1464687145696</created>
@@ -818,11 +813,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465041871360</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="fixing sendphoto bugs">
+      <created>1465042136981</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1465042136981</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150130000" />
+    <option name="totallyTimeSpent" value="150502000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1190,14 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
-          <caret line="102" column="25" selection-start-line="87" selection-start-column="24" selection-end-line="102" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -1210,9 +1204,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="243" column="43" selection-start-line="243" selection-start-column="43" selection-end-line="243" selection-end-column="43" />
+        <state relative-caret-position="-774">
+          <caret line="260" column="44" selection-start-line="260" selection-start-column="44" selection-end-line="260" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="93" column="99" selection-start-line="93" selection-start-column="99" selection-end-line="93" selection-end-column="99" />
+          <folding>
+            <element signature="e#141#173#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
