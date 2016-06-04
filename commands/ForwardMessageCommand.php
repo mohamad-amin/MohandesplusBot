@@ -281,9 +281,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'پیش نمایش:';
                         Request::sendMessage($data);
-                        $data['from_chat_id'] = $chat_id;
-                        $data['message_id'] = $this->conversation->notes['message_id'];
-                        Request::forwardMessage($data);
+                        $tData['chat_id'] = $chat_id;
+                        $tData['from_chat_id'] = $chat_id;
+                        $tData['message_id'] = $this->conversation->notes['message_id'];
+                        Request::forwardMessage($tData);
                         if (\PersianTimeGenerator::getTimeInMilliseconds($time) < round(microtime(true))) {
                             $data['text'] = 'هشدار! زمان انتخابی شما قبل از حال است! در این صورت پیام شما در لحظه فرستاده خواهد شد.';
                             Request::sendMessage($data);
