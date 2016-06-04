@@ -312,7 +312,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 $tData['parse_mode'] = 'Markdown';
                                 $path = 'http://scixnet.com/api/mohandesplusbot/images/'.$file_name;
                                 $tData['text'] = $this->conversation->notes['messageText'].
-                                    '[.]('.$path.')';
+                                    '[ ]('.$path.')';
                                 Request::sendMessage($tData);
                             } else {
                                 $tData['text'] = 'Server response not ok :('."\n".@$serverResponse;

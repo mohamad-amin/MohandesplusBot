@@ -4,7 +4,6 @@
     <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendPhotoCommand.php" afterPath="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getUpdateCLI.php" afterPath="$PROJECT_DIR$/getUpdateCLI.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="470">
-              <caret line="314" column="37" selection-start-line="314" selection-start-column="37" selection-end-line="314" selection-end-column="37" />
+              <caret line="314" column="39" selection-start-line="314" selection-start-column="39" selection-end-line="314" selection-end-column="39" />
               <folding>
                 <element signature="e#157#202#0#PHP" expanded="true" />
               </folding>
@@ -454,14 +453,7 @@
       <workItem from="1464854677239" duration="4529000" />
       <workItem from="1464972423495" duration="8230000" />
       <workItem from="1465012983803" duration="9595000" />
-      <workItem from="1465024661711" duration="14552000" />
-    </task>
-    <task id="LOCAL-00009" summary="bug fixes">
-      <created>1464687521141</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1464687521141</updated>
+      <workItem from="1465024661711" duration="14728000" />
     </task>
     <task id="LOCAL-00010" summary="testing bugs">
       <created>1464687935365</created>
@@ -799,11 +791,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465042720206</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="fixing sendphoto bugs">
+      <created>1465042922972</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1465042922972</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150914000" />
+    <option name="totallyTimeSpent" value="151090000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1192,7 +1191,7 @@
     <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
-          <caret line="314" column="37" selection-start-line="314" selection-start-column="37" selection-end-line="314" selection-end-column="37" />
+          <caret line="314" column="39" selection-start-line="314" selection-start-column="39" selection-end-line="314" selection-end-column="39" />
           <folding>
             <element signature="e#157#202#0#PHP" expanded="true" />
           </folding>
