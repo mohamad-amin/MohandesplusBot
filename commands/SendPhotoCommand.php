@@ -307,12 +307,12 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $serverResponse = Request::getFile(['file_id' => $this->conversation->notes['photo']]);
                             sleep(1);
                             if ($serverResponse->isOk()) {
-                                $file_name = str_replace('_', '-', $serverResponse->getResult()->getFilePath());
+                                $file_name = $serverResponse->getResult()->getFilePath();
                                 Request::downloadFile($serverResponse->getResult());
                                 $tData['parse_mode'] = 'Markdown';
-                                $path = 'http://scixnet.com/api/mohandesplusbot/images/'.str_replace('_', '-', $file_name);
+                                $path = 'http://scixnet.com/api/mohandesplusbot/images/'.$file_name;
                                 $tData['text'] = $this->conversation->notes['messageText'].
-                                    '![.]('.$path.')';
+                                    '[.]('.$path.')';
                                 Request::sendMessage($tData);
                             } else {
                                 $tData['text'] = 'Server response not ok :('."\n".@$serverResponse;

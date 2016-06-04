@@ -93,7 +93,7 @@ function checkQueueDatabase() {
                                 $tData['parse_mode'] = 'Markdown';
                                 $path = 'http://scixnet.com/api/mohandesplusbot/images/'.$file_name;
                                 $tData['text'] = $data['Text'].
-                                    '![  ]('.$path.')';
+                                    '[  ]('.$path.')';
                                 Request::sendMessage($tData);
                             }
                         } else {
