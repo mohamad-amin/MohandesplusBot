@@ -326,8 +326,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
         }
 
-
-
     }
 }
 
@@ -339,7 +337,7 @@ namespace {
 
         public static function getTimeInMilliseconds($time) {
             $times = explode("-", $time);
-            $calendar = new jDateTime(true, true, 'UTC');
+            $calendar = new jDateTime(true, true, 'Europe/Berlin');
             $timestamp = $calendar->mktime(
                 intval($times[3]),
                 intval($times[4]),
