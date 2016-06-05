@@ -337,7 +337,7 @@ namespace {
 
         public static function getTimeInMilliseconds($time) {
             $times = explode("-", $time);
-            $calendar = new jDateTime(true, true, 'Europe/Berlin');
+            $calendar = new jDateTime(true, true, 'Unix');
             $timestamp = $calendar->mktime(
                 intval($times[3]),
                 intval($times[4]),
@@ -346,7 +346,7 @@ namespace {
                 intval($times[2]),
                 intval($times[0])
             );
-            return $timestamp;
+            return $timestamp + 9100; // Todo: This Shit
         }
 
     }
