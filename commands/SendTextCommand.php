@@ -337,7 +337,7 @@ namespace {
 
         public static function getTimeInMilliseconds($time) {
             $times = explode("-", $time);
-            $calendar = new jDateTime(true, true, 'Unix');
+            $calendar = new jDateTime(true, true, 'UTC');
             $timestamp = $calendar->mktime(
                 intval($times[3]),
                 intval($times[4]),

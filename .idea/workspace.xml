@@ -43,8 +43,8 @@
       <file leaf-file-name="SendTextCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="348" column="56" selection-start-line="348" selection-start-column="56" selection-end-line="348" selection-end-column="56" />
+            <state relative-caret-position="276">
+              <caret line="339" column="54" selection-start-line="339" selection-start-column="54" selection-end-line="339" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -469,14 +469,7 @@
       <workItem from="1465064089392" duration="47000" />
       <workItem from="1465064397427" duration="8000" />
       <workItem from="1465064417531" duration="704000" />
-      <workItem from="1465128156193" duration="6200000" />
-    </task>
-    <task id="LOCAL-00022" summary="Fixed some bugs">
-      <created>1464975165044</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1464975165044</updated>
+      <workItem from="1465128156193" duration="6289000" />
     </task>
     <task id="LOCAL-00023" summary="test">
       <created>1464975870198</created>
@@ -814,11 +807,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465133395360</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Fixing Time">
+      <created>1465134458864</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1465134458864</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163808000" />
+    <option name="totallyTimeSpent" value="163897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1204,8 +1204,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="348" column="56" selection-start-line="348" selection-start-column="56" selection-end-line="348" selection-end-column="56" />
+        <state relative-caret-position="276">
+          <caret line="339" column="54" selection-start-line="339" selection-start-column="54" selection-end-line="339" selection-end-column="54" />
           <folding />
         </state>
       </provider>
