@@ -68,7 +68,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                     $keyboard[$j][$i % 3] = $key;
                                     $i++;
                                 }
-                                $keyboard[] = ['بیخیال'];
+                                $keyboard[] = ['❌ بی‌خیال'];
                                 $data['reply_markup'] = new ReplyKeyboardMarkup(
                                     [
                                         'keyboard' => $keyboard,

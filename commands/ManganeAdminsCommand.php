@@ -53,7 +53,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 $state = $this->conversation->notes['state'];
             }
 
-            if ($text == 'بازگشت') {
+            if ($text == 'بازگشت ⬅️') {
                 --$state;
                 $this->conversation->notes['state'] = $state;
                 $this->conversation->update();
@@ -127,7 +127,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $keyboard[$j][$i % 3] = $channel;
                             $i++;
                         }
-                        $keyboard[] = ['بیخیال', 'بازگشت'];
+                        $keyboard[] = ['❌ بی‌خیال', 'بازگشت ⬅️'];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -144,14 +144,14 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $this->conversation->notes['state'] = ++$state;
                     $this->conversation->update();
                 case 2:
-                    $validAnswers = ['مشاهده‌ی ادمین‌ها', 'حذف ادمین', 'افزودن ادمین'];
+                    $validAnswers = ['مشاهده‌ی ادمین‌ها', '➖ حذف ادمین', '➕ افزودن ادمین'];
                     if (empty($text) || !in_array($text, $validAnswers)) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $keyboard = [
-                            ['مشاهده‌ی ادمین‌ها', 'حذف ادمین', 'افزودن ادمین'],
-                            ['بازگشت', 'بیخیال']
+                            ['مشاهده‌ی ادمین‌ها', '➖ حذف ادمین', '➕ افزودن ادمین'],
+                            ['❌ بی‌خیال', 'بازگشت ⬅️']
                         ];
                         $data['text'] = 'گزینه‌ی موردنظر را انتخاب کنید:';
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
@@ -182,7 +182,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             }
                             Request::sendMessage($tData);
                             break;
-                        case 'حذف ادمین':
+                        case '➖ حذف ادمین':
                             $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
                             $tData = [];
                             $tData['chat_id'] = $chat_id;
@@ -191,7 +191,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 Request::sendMessage($tData);
                                 $tData['text'] = '';
                                 for ($i = 0; $i < count($helpers); $i++) {
-                                    $tData['text'] .= ($i+1) . '. @' . $helpers[$i] . "\n" . 'حذف: ' . '/deleteadmin' . $helpers[$i] . "\n";
+                                    $tData['text'] .= ($i+1) . '. @' . $helpers[$i] . "\n" . '➖ حذف: ' . '/deleteadmin' . $helpers[$i] . "\n";
                                 }
                                 $this->conversation->notes['state'] = 4;
                                 $this->conversation->update();
@@ -200,7 +200,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             }
                             Request::sendMessage($tData);
                             break;
-                        case 'افزودن ادمین':
+                        case '➕ افزودن ادمین':
                             $this->conversation->notes['state'] = ++$state;
                             $this->conversation->update();
                             $shouldContinue = true;
@@ -220,7 +220,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         } else {
                             $data['text'] = 'ادمین موردنظر باید username داشته باشد. لطفا پیامی دیگر فوروارد کنید.';
                         }
-                        $keyboard = [['بیخیال', 'بازگشت']];
+                        $keyboard = [['❌ بی‌خیال', 'بازگشت ⬅️']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -258,7 +258,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $tData['chat_id'] = $chat_id;
                         $tData['text'] = '';
                         for ($i = 0; $i < count($helpers); $i++) {
-                            $tData['text'] .= $i . '. @' . $helpers[$i] . "\n" . 'حذف: ' . '/deleteadmin' . $helpers[$i] . "\n";
+                            $tData['text'] .= $i . '. @' . $helpers[$i] . "\n" . '➖ حذف ادمین: ' . '/deleteadmin' . $helpers[$i] . "\n";
                         }
                         Request::sendMessage($tData);
                         break;
@@ -268,12 +268,12 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $this->conversation->update();
                     $text = '';
                 case 5:
-                    if (empty($text) || ($text != 'بله' && $text != 'خیر')) {
+                    if (empty($text) || ($text != '✅ بله' && $text != '❎ نه')) {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'آیا از حذف ' . '@' . $this->conversation->notes['helper'] . ' مطمئنید؟';
-                        $keyboard = [['بله', 'خیر'], ['بیخیال']];
+                        $keyboard = [['✅ بله', '❎ نه'], ['❌ بی‌خیال']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -285,7 +285,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $result = Request::sendMessage($data);
                         break;
                     }
-                    if ($text == 'بله') {
+                    if ($text == '✅ بله') {
                         $channel = $this->conversation->notes['channelName'];
                         $helper = $this->conversation->notes['helper'];
                         if (\AdminDatabase::removeHelperFromChannel($channel, $user->getUsername(), $helper)) {

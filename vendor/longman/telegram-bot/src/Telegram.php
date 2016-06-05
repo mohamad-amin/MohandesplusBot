@@ -434,7 +434,7 @@ class Telegram
         //If all else fails, it's a generic message.
         $command = 'genericmessage';
 
-        if ($this->update->getMessage()->getText() == 'بیخیال') {
+        if ($this->update->getMessage()->getText() == '❌ بی‌خیال') {
             $command = 'cancel';
         } else if (strpos($this->update->getMessage()->getText(), '/delete') === false) {
             $update_type = $this->update->getUpdateType();

@@ -61,7 +61,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 $state = $this->conversation->notes['state'];
             }
 
-            if ($text == 'بازگشت') {
+            if ($text == 'بازگشت ⬅️') {
                 --$state;
                 $this->conversation->notes['state'] = $state;
                 $this->conversation->update();
@@ -84,13 +84,12 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $data['text'] = 'کانال را انتخاب کنید:';
                             $keyboard = [];
                             $i = 0;
-                            $keyboard[] = ['بیخیال'];
                             foreach ($channels as $key) {
                                 $j = (int) floor($i/3);
                                 $keyboard[$j][$i % 3] = $key;
                                 $i++;
                             }
-                            $keyboard[] = ['بیخیال'];
+                            $keyboard[] = ['❌ بی‌خیال'];
                             $data['reply_markup'] = new ReplyKeyboardMarkup(
                                 [
                                     'keyboard' => $keyboard,
@@ -113,7 +112,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'پیام خود را وارد کنید:';
-                        $keyboard = [['بازگشت', 'بیخیال']];
+                        $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -135,8 +134,9 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'گیف را بفرستید';
-                        $keyboard = [['بازگشت', 'بیخیال']];
+                        $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
+
                             [
                                 'keyboard' => $keyboard,
                                 'resize_keyboard' => true,
@@ -159,7 +159,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['text'] = 'سال ارسال پیام خود را وارد کنید';
                         $keyboard = [
                             ['1395', '1396', '1397'],
-                            ['بازگشت', 'بیخیال']
+                            ['بازگشت ⬅️', '❌ بی‌خیال']
                         ];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
@@ -186,7 +186,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             ['1', '2', '3', '4'],
                             ['5', '6', '7', '8'],
                             ['9', '10', '11', '12'],
-                            ['بازگشت', 'بیخیال']
+                            ['بازگشت ⬅️', '❌ بی‌خیال']
                         ];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
@@ -215,7 +215,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 ['9', '10', '11', '12', '13', '14', '15', '16'],
                                 ['17', '18', '19', '20', '21', '22', '23', '24'],
                                 ['25', '26', '27', '28', '29', '30', '31', ' '],
-                                ['بازگشت', 'بیخیال']
+                                ['بازگشت ⬅️', '❌ بی‌خیال']
                             ];
                         } else {
                             $keyboard = [
@@ -223,7 +223,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 ['9', '10', '11', '12', '13', '14', '15', '16'],
                                 ['17', '18', '19', '20', '21', '22', '23', '24'],
                                 ['25', '26', '27', '28', '29', '30', ' ', ' '],
-                                ['بازگشت', 'بیخیال']
+                                ['بازگشت ⬅️', '❌ بی‌خیال']
                             ];
                         }
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
@@ -247,7 +247,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'ساعت (۲۴ ساعته) ارسال پیام را وارد کنید:';
-                        $keyboard = [['بازگشت', 'بیخیال']];
+                        $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -269,7 +269,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'دقیقه‌ی ارسال پیام را وارد کنید:';
-                        $keyboard = [['بازگشت', 'بیخیال']];
+                        $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -286,7 +286,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $text = '';
                     $this->conversation->update();
                 case 8:
-                    if (empty($text) || !($text == 'ارسال')) {
+                    if (empty($text) || !($text == '✔️ تایید و ارسال')) {
 
                         $time = $this->conversation->notes['year'].'-'.
                             $this->conversation->notes['month'].'-'.
@@ -294,7 +294,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $this->conversation->notes['hour'].'-'.
                             $this->conversation->notes['minute'];
 
-                        $keyboard = [['ارسال', 'بازگشت', 'بیخیال']];
+                        $keyboard = [['✔️ تایید و ارسال'],['بازگشت ⬅️', '❌ بی‌خیال']];
                         $data = [];
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'پیش نمایش:';

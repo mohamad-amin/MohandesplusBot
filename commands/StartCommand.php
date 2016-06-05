@@ -58,12 +58,12 @@ class StartCommand extends UserCommand {
         if (strpos($text, '/delete') !== false) {
             $id = substr($text, 7);
             \PostDeleter::deletePost($id, $chat_id, $this->telegram);
-        } else if ($text == 'افزودن پست') {
+        } else if ($text == '➕ افزودن پست') {
             $text = "نوع پست را انتخاب کنید:";
             $keyboard = [
                 ["عکس و متن", "متن"],
                 ["گیف و متن", "فیلم و متن"],
-                ["بازگشت", "فوروارد"]
+                ["بازگشت ⬅️", "فوروارد"]
             ];
             $send = true;
         } else if ($text == 'متن') {
@@ -78,9 +78,9 @@ class StartCommand extends UserCommand {
         } else if ($text == 'گیف و متن') {
             $this->conversation->stop();
             $this->telegram->executeCommand("sendgif");
-        } else if ($text == 'مدیریت پست‌ها') {
+        } else if ($text == '📆 مدیریت پست‌ها') {
             \PostAdmin::showMessages($chat_id);
-        } else if ($text == 'مدیریت ادمین‌ها') {
+        } else if ($text == '⚙ ابزارهای مدیریتی') {
             $this->conversation->stop();
             $this->telegram->executeCommand('manageadmins');
         } else if ($text == 'فوروارد') {
@@ -88,9 +88,9 @@ class StartCommand extends UserCommand {
             $this->telegram->executeCommand('forwardmessage');
         } else {
             $keyboard = [
-                ["مدیریت پست‌ها", "افزودن پست"],
+                ["📆 مدیریت پست‌ها", "➕ افزودن پست"],
                 ["نظرسنجی"],
-                ["ارتباط با ما", "مدیریت ادمین‌ها"]
+                ["✉️ ارتباط با ما", "⚙ ابزارهای مدیریتی"]
             ];
             $text = 'یکی‌از گزینه‌ها را انتخاب کنید.';
             $send = true;
