@@ -308,7 +308,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 $file_name = $serverResponse->getResult()->getFilePath();
                                 Request::downloadFile($serverResponse->getResult());
                                 $tData['parse_mode'] = 'Markdown';
-                                $path = 'http://scixnet.com/api/mohandesplusbot/images/'.$file_name;
+                                $path = 'http://scixnet.com/api/mohandesplusbot/images/'.str_replace('_', '', $file_name);
                                 $tData['text'] = $this->conversation->notes['messageText'].
                                     '[ ]('.$path.')';
                                 $this->conversation->notes['photo'] = $path;

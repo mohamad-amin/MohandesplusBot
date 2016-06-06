@@ -241,7 +241,7 @@ class Request
 
         //Create the directory
         $basepath = self::$telegram->getDownloadPath();
-        $loc_path = $basepath . '/' . $path;
+        $loc_path = $basepath . '/' . str_replace('_', '', $path);
 //        $loc_path = $basepath . '/' . str_replace('_', '-', $path);
 
         $dirname = dirname($loc_path);
