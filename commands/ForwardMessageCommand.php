@@ -308,9 +308,27 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 $result = Request::sendMessage($tData);
                                 break;
                             case 2:
-                                $tData['photo'] = $this->conversation->notes['photo'];
-                                $tData['caption'] = $this->conversation->notes['text'];
-                                $result = Request::sendPhoto($tData);
+                                if (strlen($this->conversation->notes['messageText']) > 200) {
+                                    $serverResponse = Request::getFile(['file_id' => $this->conversation->notes['photo']]);
+                                    if ($serverResponse->isOk()) {
+                                        $file_name = $serverResponse->getResult()->getFilePath();
+                                        Request::downloadFile($serverResponse->getResult());
+                                        $tData['parse_mode'] = 'Markdown';
+                                        $path = 'http://scixnet.com/api/mohandesplusbot/images/'.$file_name;
+                                        $tData['text'] = $this->conversation->notes['messageText'].
+                                            '[ ]('.$path.')';
+                                        $this->conversation->notes['photo'] = $path;
+                                        $this->conversation->update();
+                                        Request::sendMessage($tData);
+                                    } else {
+                                        $tData['text'] = 'Server response not ok :('."\n".@$serverResponse;
+                                        Request::sendMessage($tData);
+                                    }
+                                } else {
+                                    $tData['photo'] = $this->conversation->notes['photo'];
+                                    $tData['caption'] = $this->conversation->notes['messageText'];
+                                    Request::sendPhoto($tData);
+                                }
                                 break;
                             case 3:
                                 $tData['video'] = $this->conversation->notes['video'];

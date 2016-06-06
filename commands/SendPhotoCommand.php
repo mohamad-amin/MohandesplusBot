@@ -304,7 +304,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $tData['chat_id'] = $chat_id;
                         if (strlen($this->conversation->notes['messageText']) > 200) {
                             $serverResponse = Request::getFile(['file_id' => $this->conversation->notes['photo']]);
-                            sleep(1);
                             if ($serverResponse->isOk()) {
                                 $file_name = $serverResponse->getResult()->getFilePath();
                                 Request::downloadFile($serverResponse->getResult());
