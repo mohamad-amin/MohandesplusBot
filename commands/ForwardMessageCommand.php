@@ -143,7 +143,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $this->conversation->notes['type'] = 3;
                     }
                     if ($message->getDocument() != null) {
-                        $this->conversation->notes['document'] = $message->getDocument()->getFileId();
+                        $this->conversation->notes['photo'] = $message->getDocument()->getFileId();
                         $this->conversation->notes['type'] = 5;
                     }
                     $this->conversation->notes['state'] = ++$state;

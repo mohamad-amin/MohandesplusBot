@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendGifCommand.php" afterPath="$PROJECT_DIR$/commands/SendGifCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendVideoCommand.php" afterPath="$PROJECT_DIR$/commands/SendVideoCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/StartCommand.php" afterPath="$PROJECT_DIR$/commands/StartCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/ForwardMessageCommand.php" afterPath="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/TestCommand.php" afterPath="$PROJECT_DIR$/commands/TestCommand.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
@@ -42,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartCommand.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
+      <file leaf-file-name="ForwardMessageCommand.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="154" column="49" selection-start-line="154" selection-start-column="49" selection-end-line="154" selection-end-column="49" />
+            <state relative-caret-position="774">
+              <caret line="145" column="57" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -88,10 +86,10 @@
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Telegram.php" />
         <option value="$PROJECT_DIR$/commands/SendTextCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
-        <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendGifCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendVideoCommand.php" />
         <option value="$PROJECT_DIR$/commands/StartCommand.php" />
+        <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
       </list>
     </option>
   </component>
@@ -473,14 +471,7 @@
       <workItem from="1465064417531" duration="704000" />
       <workItem from="1465128156193" duration="7822000" />
       <workItem from="1465139074764" duration="18000" />
-      <workItem from="1465202811464" duration="3162000" />
-    </task>
-    <task id="LOCAL-00027" summary="fixing bugs">
-      <created>1465013497309</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1465013497309</updated>
+      <workItem from="1465202811464" duration="4296000" />
     </task>
     <task id="LOCAL-00028" summary="fixed tests">
       <created>1465013822168</created>
@@ -818,11 +809,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465203483197</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Fixed Post Management">
+      <created>1465205984953</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1465205984953</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168610000" />
+    <option name="totallyTimeSpent" value="169744000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -869,7 +867,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testing bugs" />
     <MESSAGE value="fixed getHelpersFromChannel bug" />
     <MESSAGE value="Fixed add helper to channel bug" />
     <MESSAGE value="Fixed some bugs" />
@@ -894,7 +891,8 @@
     <MESSAGE value="More beautiful now :\" />
     <MESSAGE value="Fixing Time" />
     <MESSAGE value="Fixed Forward Message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Forward Message" />
+    <MESSAGE value="Fixed Post Management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Post Management" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1145,26 +1143,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="359" column="35" selection-start-line="359" selection-start-column="35" selection-end-line="359" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="309" column="39" selection-start-line="309" selection-start-column="39" selection-end-line="309" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1195,8 +1177,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="154" column="49" selection-start-line="154" selection-start-column="49" selection-end-line="154" selection-end-column="49" />
+        <state relative-caret-position="648">
+          <caret line="186" column="27" selection-start-line="186" selection-start-column="27" selection-end-line="186" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="145" column="57" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="57" />
           <folding />
         </state>
       </provider>
