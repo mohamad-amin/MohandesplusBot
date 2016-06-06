@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="Fixed That Bugfeature`">
+    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/StartCommand.php" afterPath="$PROJECT_DIR$/commands/StartCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/TestCommand.php" afterPath="$PROJECT_DIR$/commands/TestCommand.php" />
@@ -30,11 +30,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="getUpdateCLI.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="514">
+              <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StartCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="160" column="64" selection-start-line="160" selection-start-column="64" selection-end-line="160" selection-end-column="64" />
+            <state relative-caret-position="230">
+              <caret line="165" column="104" selection-start-line="165" selection-start-column="104" selection-end-line="165" selection-end-column="104" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SendVideoCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commands/SendVideoCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -471,14 +491,7 @@
       <workItem from="1465064417531" duration="704000" />
       <workItem from="1465128156193" duration="7822000" />
       <workItem from="1465139074764" duration="18000" />
-      <workItem from="1465202811464" duration="5204000" />
-    </task>
-    <task id="LOCAL-00030" summary="small fix in add channel command">
-      <created>1465015730909</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1465015730909</updated>
+      <workItem from="1465202811464" duration="5636000" />
     </task>
     <task id="LOCAL-00031" summary="Now showing only valid channels in sendTextCommand">
       <created>1465017080238</created>
@@ -816,11 +829,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465207645819</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Fixed That Bugfeature">
+      <created>1465208078012</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1465208078012</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170652000" />
+    <option name="totallyTimeSpent" value="171084000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1137,14 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendVideoCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1169,22 +1181,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="339" column="0" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -1193,10 +1189,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendVideoCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="348" column="37" selection-start-line="348" selection-start-column="19" selection-end-line="348" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getUpdateCLI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="160" column="64" selection-start-line="160" selection-start-column="64" selection-end-line="160" selection-end-column="64" />
+        <state relative-caret-position="230">
+          <caret line="165" column="104" selection-start-line="165" selection-start-column="104" selection-end-line="165" selection-end-column="104" />
           <folding />
         </state>
       </provider>

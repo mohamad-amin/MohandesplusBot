@@ -147,8 +147,9 @@ namespace {
             foreach ($datas as $data) {
                 $i++;
                 $tData = [];
+                $time = $data['Time'] + 25300;
                 $tData['chat_id'] = $chat_id;
-                $newDate = $calendar->date("l Y/m/d", $data['Time']);
+                $newDate = $calendar->date("l Y/m/d", $time);
                 if ($date != $newDate) {
                     $tData['text'] = '➖➖➖➖➖‏➖➖➖➖'."\n".'پست‌های درصف انتظار در تاریخ:'."\n".$newDate."\n".'➖➖➖➖➖‏➖➖➖➖';
                     Request::sendMessage($tData);
@@ -158,11 +159,11 @@ namespace {
                 $date = $newDate;
                 Request::sendMessage([
                    'chat_id' => $chat_id,
-                    'text' => 'زمان :'.$calendar->date('H:i', $data['Time'])
+                    'text' => 'زمان :'.$calendar->date('H:i', $time)
                 ]);
                 switch ($data['Type']) {
                     case 1:
-                        $tData['text'] = $data['Text']."\n"."➖➖➖➖➖‏➖➖➖➖"."\n"."❌حذف پست‏: /delete".$data['Time'];
+                        $tData['text'] = $data['Text']."\n"."➖➖➖➖➖‏➖➖➖➖"."\n"."❌حذف پست‏: /delete".$time;
                         Request::sendMessage($tData);
                         break;
                     case 2:
