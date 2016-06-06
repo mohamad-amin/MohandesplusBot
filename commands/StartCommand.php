@@ -138,33 +138,55 @@ namespace {
             $datas = $database->select("queue", "*", [
                 "AND" => [
                     "ChatId" => intval($chat_id)
-                ]
+                ],
+                'ORDER' => 'Time'
             ]);
             $i = 0;
+            $date = '';
             foreach ($datas as $data) {
                 $i++;
                 $tData = [];
                 $tData['chat_id'] = $chat_id;
+                $newDate = jDateTime::date("l Y/m/d", $data['Time']);
+                if ($date != $newDate) {
+                    $tData['text'] = '➖➖➖➖➖‏➖➖➖➖'."\n".'پست‌های درصف انتظار در تاریخ:'."\n".$newDate."\n".'➖➖➖➖➖‏➖➖➖➖';
+                    Request::sendMessage($tData);
+                    $tData = [];
+                    $tData['chat_id'] = $chat_id;
+                }
+                $date = $newDate;
+                Request::sendMessage([
+                   'chat_id' => $chat_id,
+                    'text' => 'زمان :'.jDateTime::date('H:i', $data['Time'])
+                ]);
                 switch ($data['Type']) {
                     case 1:
-                        $tData['text'] = $data['Text']."\n"."/delete".$data['Time'];
+                        $tData['text'] = $data['Text']."\n"."➖➖➖➖➖‏➖➖➖➖"."\n"."❌حذف پست‏: /delete".$data['Time'];
                         Request::sendMessage($tData);
                         break;
                     case 2:
-                        $tData['photo'] = $data['Photo'];
-                        $tData['caption'] = $data['Text']."\n"."/delete".$data['Time'];
-                        Request::sendPhoto($tData);
+                        if (strlen($data['Text']) > 200) {
+                            $tData['parse_mode'] = 'Markdown';
+                            $tData['text'] = $data['Text'].
+                                // Todo: maybe sometimes bug
+                                '[ ]('.$data['Photo'].')'."\n"."➖➖➖➖➖‏➖➖➖➖"."\n"."❌حذف پست‏: /delete".$data['Time'];
+                            Request::sendMessage($tData);
+                        } else {
+                            $tData['photo'] = $data['Photo'];
+                            $tData['caption'] = $data['Text']."\n"."➖➖➖➖➖‏➖➖➖➖"."\n"."❌حذف پست‏: /delete".$data['Time'];
+                            Request::sendPhoto($tData);
+                        }
                         break;
                     case 3:
                         $tData['video'] = $data['Video'];
-                        $tData['caption'] = $data['Text']."\n"."/delete".$data['Time'];
+                        $tData['caption'] = $data['Text']."\n"."➖➖➖➖➖‏➖➖➖➖"."\n"."❌حذف پست‏: /delete".$data['Time'];
                         Request::sendVideo($tData);
                         break;
                     case 4:
                         break;
                     case 5:
                         $tData['document'] = $data['Photo'];
-                        $tData['caption'] = $data['Text'];
+                        $tData['caption'] = $data['Text']."\n"."➖➖➖➖➖‏➖➖➖➖"."\n"."❌حذف پست‏: /delete".$data['Time'];
                         Request::sendDocument($tData);
                         break;
                 }

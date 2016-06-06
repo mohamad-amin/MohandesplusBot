@@ -111,7 +111,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data = [];
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
-                        $data['text'] = 'پیام خود را وارد کنید:';
+                        $data['text'] = 'پیام خود را وارد کنید: (کمتر از ۱۵۰ کاراکتر)';
                         $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
