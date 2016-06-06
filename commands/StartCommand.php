@@ -147,7 +147,7 @@ namespace {
             foreach ($datas as $data) {
                 $i++;
                 $tData = [];
-                $time = $data['Time'] + 25300;
+                $time = $data['Time'] + 16240;
                 $tData['chat_id'] = $chat_id;
                 $newDate = $calendar->date("l Y/m/d", $time);
                 if ($date != $newDate) {

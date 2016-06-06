@@ -343,7 +343,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         break;
                     }
                     $databaser->addMessageToDatabase(
-                        $this->conversation->notes['messageText'] . "\n" . '@mohandes\_plus',
+                        $this->conversation->notes['messageText'] . "\n" . '@mohandes_plus',
                         $this->conversation->notes['photo'],
                         '@' . $this->conversation->notes['channelName'],
                         $chat_id,

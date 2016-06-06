@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="">
+    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="Fixed Post Management&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendPhotoCommand.php" afterPath="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/StartCommand.php" afterPath="$PROJECT_DIR$/commands/StartCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/TestCommand.php" afterPath="$PROJECT_DIR$/commands/TestCommand.php" />
     </list>
@@ -43,8 +44,18 @@
       <file leaf-file-name="StartCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="165" column="104" selection-start-line="165" selection-start-column="104" selection-end-line="165" selection-end-column="104" />
+            <state relative-caret-position="356">
+              <caret line="149" column="45" selection-start-line="149" selection-start-column="45" selection-end-line="149" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SendPhotoCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1309">
+              <caret line="345" column="85" selection-start-line="345" selection-start-column="85" selection-end-line="345" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -107,8 +118,8 @@
         <option value="$PROJECT_DIR$/commands/SendGifCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendVideoCommand.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" />
-        <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
         <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
+        <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
         <option value="$PROJECT_DIR$/commands/StartCommand.php" />
       </list>
     </option>
@@ -491,14 +502,7 @@
       <workItem from="1465064417531" duration="704000" />
       <workItem from="1465128156193" duration="7822000" />
       <workItem from="1465139074764" duration="18000" />
-      <workItem from="1465202811464" duration="5636000" />
-    </task>
-    <task id="LOCAL-00031" summary="Now showing only valid channels in sendTextCommand">
-      <created>1465017080238</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1465017080238</updated>
+      <workItem from="1465202811464" duration="5830000" />
     </task>
     <task id="LOCAL-00032" summary="bug fix">
       <created>1465017366777</created>
@@ -836,11 +840,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465208078012</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Fixed Post Management&#10;">
+      <created>1465208513136</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1465208513136</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171084000" />
+    <option name="totallyTimeSpent" value="171278000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -887,7 +898,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed some bugs" />
     <MESSAGE value="fixing bugs" />
     <MESSAGE value="fixed tests" />
     <MESSAGE value="Added Remove Channel Command" />
@@ -912,7 +922,8 @@
     <MESSAGE value="Fixed Post Management" />
     <MESSAGE value="Fixed Forwarding GIF" />
     <MESSAGE value="Fixed That Bugfeature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed That Bugfeature" />
+    <MESSAGE value="Fixed Post Management&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Post Management&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1165,34 +1176,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="310" column="48" selection-start-line="310" selection-start-column="41" selection-end-line="310" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/TestCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="340" column="48" selection-start-line="340" selection-start-column="40" selection-end-line="340" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendVideoCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
           <folding />
         </state>
       </provider>
@@ -1213,10 +1200,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="340" column="48" selection-start-line="340" selection-start-column="40" selection-end-line="340" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendVideoCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="345" column="85" selection-start-line="345" selection-start-column="85" selection-end-line="345" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="165" column="104" selection-start-line="165" selection-start-column="104" selection-end-line="165" selection-end-column="104" />
+        <state relative-caret-position="356">
+          <caret line="149" column="45" selection-start-line="149" selection-start-column="45" selection-end-line="149" selection-end-column="45" />
           <folding />
         </state>
       </provider>
