@@ -127,6 +127,7 @@ namespace {
     class PostAdmin {
 
         public static function showMessages($chat_id) {
+            $calendar = new jDateTime(true, true, 'UTC');
             $database = new medoo([
                 'database_type' => 'mysql',
                 'database_name' => 'mohandesplusbot',
@@ -147,7 +148,7 @@ namespace {
                 $i++;
                 $tData = [];
                 $tData['chat_id'] = $chat_id;
-                $newDate = jDateTime::date("l Y/m/d", $data['Time']);
+                $newDate = $calendar->date("l Y/m/d", $data['Time']);
                 if ($date != $newDate) {
                     $tData['text'] = '➖➖➖➖➖‏➖➖➖➖'."\n".'پست‌های درصف انتظار در تاریخ:'."\n".$newDate."\n".'➖➖➖➖➖‏➖➖➖➖';
                     Request::sendMessage($tData);
@@ -157,7 +158,7 @@ namespace {
                 $date = $newDate;
                 Request::sendMessage([
                    'chat_id' => $chat_id,
-                    'text' => 'زمان :'.jDateTime::date('H:i', $data['Time'])
+                    'text' => 'زمان :'.$calendar->date('H:i', $data['Time'])
                 ]);
                 switch ($data['Type']) {
                     case 1:
