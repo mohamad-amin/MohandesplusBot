@@ -308,7 +308,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                         Request::downloadFile($serverResponse->getResult());
                                         $tData['parse_mode'] = 'Markdown';
                                         $path = 'http://scixnet.com/api/mohandesplusbot/images/'.str_replace('_', '', $file_name);
-                                        $tData['text'] = $this->conversation->notes['messageText'].
+                                        $tData['text'] = $this->conversation->notes['text'].
                                             '[ ]('.$path.')';
                                         $this->conversation->notes['photo'] = $path;
                                         $this->conversation->update();
@@ -319,7 +319,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                     }
                                 } else {
                                     $tData['photo'] = $this->conversation->notes['photo'];
-                                    $tData['caption'] = $this->conversation->notes['messageText'];
+                                    $tData['caption'] = $this->conversation->notes['text'];
                                     Request::sendPhoto($tData);
                                 }
                                 break;
