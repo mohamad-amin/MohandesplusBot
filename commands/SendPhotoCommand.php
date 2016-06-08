@@ -47,7 +47,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $message_id = $message->getMessageId();      //Get message Id
 
             $data = [];
-            $data['reply_to_message_id'] = $message_id;
             $data['chat_id'] = $chat_id;
             $channels = \AdminDatabase::getHelpersChannels($user->getUsername());
             if ($text == 'عکس و متن') {
@@ -109,7 +108,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 1:
                     if (empty($text)) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'پیام خود را وارد کنید:';
                         $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
@@ -131,7 +129,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 2:
                     if ($message->getPhoto() == null) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'عکس را بفرستید';
                         $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
@@ -154,7 +151,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 3:
                     if (empty($text) || !is_numeric($text)) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'سال ارسال پیام خود را وارد کنید';
                         $keyboard = [
@@ -179,7 +175,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 4:
                     if (empty($text) || !is_numeric($text) || intval($text)<1 || intval($text)>12) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'ماه ارسال پیام را وارد کنید:';
                         $keyboard = [
@@ -206,7 +201,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 5:
                     if (empty($text) || !is_numeric($text) || intval($text)<1 || intval($text)>31) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'روز ارسال پیام را وارد کنید:';
                         if ($this->conversation->notes['month'] < 7) {
@@ -244,7 +238,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 6:
                     if (empty($text) || !is_numeric($text) || intval($text)<0 || intval($text)>24) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'ساعت (۲۴ ساعته) ارسال پیام را وارد کنید:';
                         $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
@@ -266,7 +259,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 7:
                     if (empty($text) || !is_numeric($text) || intval($text)<0 || intval($text)>59) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'دقیقه‌ی ارسال پیام را وارد کنید:';
                         $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
@@ -354,7 +346,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $this->conversation->notes['minute']
                     );
                     $data = [];
-                    $data['reply_to_message_id'] = $message_id;
                     $data['chat_id'] = $chat_id;
                     $data['text'] = "پیام شما ارسال خواهد شد :)";
                     $data['reply_markup'] = new ReplyKeyboardHide(['selective' => true]);
