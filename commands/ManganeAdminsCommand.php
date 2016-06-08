@@ -236,10 +236,14 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $username = $message->getForwardFrom()->getUsername();
                     $tData = [];
                     $tData['chat_id'] = $chat_id;
-                    if (\AdminDatabase::addHelperToChannel($channel, $user->getUsername(), $username)) {
-                        $tData['text'] = 'کاربر ' . '@' . $username . ' با موفقیت به کانال' . ' @' . $channel . ' اضافه شد :)';
+                    if (\AdminDatabase::isUserAdminAtChannel($username, $channel)) {
+                        $data['text'] = 'این کاربر ('.'@'.$username.'('.' از قبل ادمین بود.';
                     } else {
-                        $tData['text'] = 'خطا در اضافه کردن کاربر ' . '@' . $username . 'به کانال' . ' @' . $channel . ' !';
+                        if (\AdminDatabase::addHelperToChannel($channel, $user->getUsername(), $username)) {
+                            $tData['text'] = 'کاربر ' . '@' . $username . ' با موفقیت به کانال' . ' @' . $channel . ' اضافه شد :)';
+                        } else {
+                            $tData['text'] = 'خطا در اضافه کردن کاربر ' . '@' . $username . 'به کانال' . ' @' . $channel . ' !';
+                        }
                     }
                     Request::sendMessage($tData);
                     $this->conversation->stop();
@@ -391,6 +395,19 @@ namespace {
 
         }
 
+        public static function channelExists($channelName) {
+            return Database::getDatabase()->has('admin', ['Channel' => $channelName]);
+        }
+
+        public static function adminExistsAtChannel($channelName, $admin) {
+            return Database::getDatabase()->has('admin', [
+               'AND' => [
+                   'Channel' => $channelName,
+                   'Helpers[~]' => $admin
+               ]
+            ]);
+        }
+
         public static function getChannels() {
             $data = Database::getDatabase()->select('admin', '*');
             $channels = [];
@@ -467,6 +484,7 @@ namespace {
             return Database::getDatabase()->insert('admin', [
                 'Channel' => $channel,
                 'Admin' => $admin,
+                'Helpers' => $admin,
                 'Type' => 0
             ]);
         }

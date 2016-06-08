@@ -76,14 +76,20 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $result = Request::sendMessage($data);
                             break;
                         }
-                        if (\AdminDatabase::addChannel($text, $user->getUsername())) {
-                            $data['text'] = 'کانال شما اضافه شد. برای استفاده از ربات باید این ربات را به صورت ادمین به کانال خود اضافه کنید.'
-                                .' در غیر این صورت ربات برای شما کار نخواهد کرد.';
+                        if (\AdminDatabase::channelExists($text)) {
+                            $data['text'] = 'این کانال قبلا اضافه شده است. اگر این کانال شماست از قسمت ارتباط با ما به ما گزارش دهید.';
                             $result = Request::sendMessage($data);
                             $this->telegram->executeCommand('cancel');
                         } else {
-                            $data['text'] = 'خطا در اضافه کردن کانال! لطفا مجددا تلاش کنید.آیدی کانال (بدون @) را وارد کنید:'."\n".$text;
-                            Request::sendMessage($data);
+                            if (\AdminDatabase::addChannel($text, $user->getUsername())) {
+                                $data['text'] = 'کانال شما اضافه شد. برای استفاده از ربات باید این ربات را به صورت ادمین به کانال خود اضافه کنید.'
+                                    .' در غیر این صورت ربات برای شما کار نخواهد کرد.';
+                                $result = Request::sendMessage($data);
+                                $this->telegram->executeCommand('cancel');
+                            } else {
+                                $data['text'] = 'خطا در اضافه کردن کانال! لطفا مجددا تلاش کنید.آیدی کانال (بدون @) را وارد کنید:'."\n".$text;
+                                $result = Request::sendMessage($data);
+                            }
                         }
                         break;
                     }

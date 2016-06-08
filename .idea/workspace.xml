@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="">
+    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="Fixed ForwardCommand preview error with images">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/ForwardMessageCommand.php" afterPath="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/AddChannelCommand.php" afterPath="$PROJECT_DIR$/commands/AddChannelCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" afterPath="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/TestCommand.php" afterPath="$PROJECT_DIR$/commands/TestCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getUpdateCLI.php" afterPath="$PROJECT_DIR$/getUpdateCLI.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ForwardMessageCommand.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
+      <file leaf-file-name="ManganeAdminsCommand.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="314" column="69" selection-start-line="314" selection-start-column="69" selection-end-line="314" selection-end-column="69" />
+            <state relative-caret-position="369">
+              <caret line="228" column="26" selection-start-line="228" selection-start-column="26" selection-end-line="228" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -68,9 +68,7 @@
         <option value="$PROJECT_DIR$/commands/ManageAdminCommand.php" />
         <option value="$PROJECT_DIR$/commands/ManganeAdminCommand.php" />
         <option value="$PROJECT_DIR$/bot.php" />
-        <option value="$PROJECT_DIR$/commands/AddChannelCommand.php" />
         <option value="$PROJECT_DIR$/test" />
-        <option value="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
         <option value="$PROJECT_DIR$/commands/RemoveChannelCommand.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Telegram.php" />
         <option value="$PROJECT_DIR$/commands/SendGifCommand.php" />
@@ -81,6 +79,8 @@
         <option value="$PROJECT_DIR$/commands/StartCommand.php" />
         <option value="$PROJECT_DIR$/getUpdateCLI.php" />
         <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
+        <option value="$PROJECT_DIR$/commands/AddChannelCommand.php" />
+        <option value="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
       </list>
     </option>
   </component>
@@ -290,14 +290,7 @@
       <workItem from="1465128156193" duration="7822000" />
       <workItem from="1465139074764" duration="18000" />
       <workItem from="1465202811464" duration="6246000" />
-      <workItem from="1465422963102" duration="2989000" />
-    </task>
-    <task id="LOCAL-00035" summary="bug fix">
-      <created>1465018201447</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1465018201447</updated>
+      <workItem from="1465422963102" duration="3773000" />
     </task>
     <task id="LOCAL-00036" summary="test">
       <created>1465018356963</created>
@@ -635,11 +628,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465425091945</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Fixed ForwardCommand preview error with images">
+      <created>1465425969101</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1465425969101</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174683000" />
+    <option name="totallyTimeSpent" value="175467000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,7 +686,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Remove Channel Command" />
     <MESSAGE value="small fix in add channel command" />
     <MESSAGE value="Now showing only valid channels in sendTextCommand" />
     <MESSAGE value="bug fix" />
@@ -711,7 +710,9 @@
     <MESSAGE value="Fixed Post Management&#10;" />
     <MESSAGE value="No replies more" />
     <MESSAGE value="fixed time ?" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed time ?" />
+    <MESSAGE value="Fixed ForwardCommand preview error with images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed ForwardCommand preview error with images" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -917,13 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="84" column="96" selection-start-line="84" selection-start-column="96" selection-end-line="84" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/RemoveChannelCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
@@ -936,14 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="436" column="64" selection-start-line="436" selection-start-column="64" selection-end-line="436" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="309" column="39" selection-start-line="309" selection-start-column="39" selection-end-line="309" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1016,6 +1002,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="314" column="69" selection-start-line="314" selection-start-column="69" selection-end-line="314" selection-end-column="69" />
+          <folding>
+            <element signature="e#157#202#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="81" column="70" selection-start-line="81" selection-start-column="70" selection-end-line="81" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="228" column="26" selection-start-line="228" selection-start-column="26" selection-end-line="228" selection-end-column="26" />
           <folding />
         </state>
       </provider>
