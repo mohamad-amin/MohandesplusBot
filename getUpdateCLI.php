@@ -71,7 +71,7 @@ function checkQueueDatabase() {
     $datas = $database->select("queue", "*");
     foreach($datas as $data) {
         $time = $data['Time'];
-        if (round(microtime(true)) > $time) {
+        if (time()+9100 > $time) {
             $tData = [];
             $tData['chat_id'] = $data['Channel'];
             if ($data['MessageId'] != 0) {
