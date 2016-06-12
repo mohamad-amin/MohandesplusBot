@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="Fixed ForwardCommand preview error with images">
+    <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="Some checks before adding channel or admin&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/AddChannelCommand.php" afterPath="$PROJECT_DIR$/commands/AddChannelCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" afterPath="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/ForwardMessageCommand.php" afterPath="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendGifCommand.php" afterPath="$PROJECT_DIR$/commands/SendGifCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendPhotoCommand.php" afterPath="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendTextCommand.php" afterPath="$PROJECT_DIR$/commands/SendTextCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/SendVideoCommand.php" afterPath="$PROJECT_DIR$/commands/SendVideoCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/StartCommand.php" afterPath="$PROJECT_DIR$/commands/StartCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/TestCommand.php" afterPath="$PROJECT_DIR$/commands/TestCommand.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
@@ -30,18 +34,7 @@
     <favorites_list name="mohandesplusbot" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ManganeAdminsCommand.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="228" column="26" selection-start-line="228" selection-start-column="26" selection-end-line="228" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,16 +64,16 @@
         <option value="$PROJECT_DIR$/test" />
         <option value="$PROJECT_DIR$/commands/RemoveChannelCommand.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Telegram.php" />
-        <option value="$PROJECT_DIR$/commands/SendGifCommand.php" />
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" />
-        <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
-        <option value="$PROJECT_DIR$/commands/SendTextCommand.php" />
-        <option value="$PROJECT_DIR$/commands/SendVideoCommand.php" />
-        <option value="$PROJECT_DIR$/commands/StartCommand.php" />
         <option value="$PROJECT_DIR$/getUpdateCLI.php" />
-        <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
         <option value="$PROJECT_DIR$/commands/AddChannelCommand.php" />
         <option value="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
+        <option value="$PROJECT_DIR$/commands/SendTextCommand.php" />
+        <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
+        <option value="$PROJECT_DIR$/commands/SendVideoCommand.php" />
+        <option value="$PROJECT_DIR$/commands/SendGifCommand.php" />
+        <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
+        <option value="$PROJECT_DIR$/commands/StartCommand.php" />
       </list>
     </option>
   </component>
@@ -138,9 +131,6 @@
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="Scratches">
-        <subPane />
-      </pane>
       <pane id="Scope">
         <subPane subId="Problems" />
         <subPane subId="Project Files">
@@ -163,26 +153,15 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="vendor">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="mohandesplusbot">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="commands">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="Scratches">
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -290,14 +269,10 @@
       <workItem from="1465128156193" duration="7822000" />
       <workItem from="1465139074764" duration="18000" />
       <workItem from="1465202811464" duration="6246000" />
-      <workItem from="1465422963102" duration="3773000" />
-    </task>
-    <task id="LOCAL-00036" summary="test">
-      <created>1465018356963</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1465018356963</updated>
+      <workItem from="1465422963102" duration="4863000" />
+      <workItem from="1465568714674" duration="1005000" />
+      <workItem from="1465590912231" duration="31000" />
+      <workItem from="1465715133981" duration="268000" />
     </task>
     <task id="LOCAL-00037" summary="Now everything is working correctly">
       <created>1465018655648</created>
@@ -635,11 +610,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465425969101</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Some checks before adding channel or admin&#10;">
+      <created>1465426751591</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1465426751591</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175467000" />
+    <option name="totallyTimeSpent" value="177861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -652,11 +634,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2657682" sideWeight="0.49592668" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2657682" sideWeight="0.49592668" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3156823" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -664,6 +645,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959569" sideWeight="0.5040733" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -686,7 +668,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="small fix in add channel command" />
     <MESSAGE value="Now showing only valid channels in sendTextCommand" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="Now everything is working correctly" />
@@ -711,7 +692,8 @@
     <MESSAGE value="No replies more" />
     <MESSAGE value="fixed time ?" />
     <MESSAGE value="Fixed ForwardCommand preview error with images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed ForwardCommand preview error with images" />
+    <MESSAGE value="Some checks before adding channel or admin&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some checks before adding channel or admin&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -930,15 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="436" column="64" selection-start-line="436" selection-start-column="64" selection-end-line="436" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendGifCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="113" column="84" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="252" column="28" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,31 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendVideoCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="330" column="41" selection-start-line="330" selection-start-column="41" selection-end-line="331" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,25 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="177" column="65" selection-start-line="177" selection-start-column="65" selection-end-line="177" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="314" column="69" selection-start-line="314" selection-start-column="69" selection-end-line="314" selection-end-column="69" />
-          <folding>
-            <element signature="e#157#202#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,7 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="81" column="70" selection-start-line="81" selection-start-column="70" selection-end-line="81" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1020,7 +947,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="228" column="26" selection-start-line="228" selection-start-column="26" selection-end-line="228" selection-end-column="26" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="87" column="52" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="87" column="52" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendVideoCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="87" column="52" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendGifCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/ForwardMessageCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="87" column="52" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1314">
+          <caret line="111" column="29" selection-start-line="111" selection-start-column="29" selection-end-line="111" selection-end-column="29" />
         </state>
       </provider>
     </entry>

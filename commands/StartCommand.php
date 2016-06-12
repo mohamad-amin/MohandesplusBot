@@ -10,13 +10,13 @@
 
 namespace Longman\TelegramBot\Commands\UserCommands {
 
-use Longman\TelegramBot\Commands\UserCommand;
-use Longman\TelegramBot\Entities\ReplyKeyboardMarkup;
-use Longman\TelegramBot\Request;
-use Longman\TelegramBot\Conversation;
-use Longman\TelegramBot\Telegram;
+    use Longman\TelegramBot\Commands\UserCommand;
+    use Longman\TelegramBot\Conversation;
+    use Longman\TelegramBot\Entities\ReplyKeyboardMarkup;
+    use Longman\TelegramBot\Request;
+    use Longman\TelegramBot\Telegram;
 
-/**
+    /**
  * Start command
  */
 class StartCommand extends UserCommand {
@@ -63,7 +63,7 @@ class StartCommand extends UserCommand {
             $keyboard = [
                 ["عکس و متن", "متن"],
                 ["گیف و متن", "فیلم و متن"],
-                ["بازگشت ⬅️", "فوروارد"]
+                ["بازگشت ⬅️", "فوروارد پست"]
             ];
             $send = true;
         } else if ($text == 'متن') {
@@ -78,19 +78,27 @@ class StartCommand extends UserCommand {
         } else if ($text == 'گیف و متن') {
             $this->conversation->stop();
             $this->telegram->executeCommand("sendgif");
-        } else if ($text == '📆 مدیریت پست‌ها') {
+        } else if ($text == 'مدیریت پست‌های درصف ارسال') {
             \PostAdmin::showMessages($chat_id);
         } else if ($text == '⚙ ابزارهای مدیریتی') {
+            $text = "یک گزینه را انتخاب کنید:";
+            $keyboard = [
+                ['مدیریت پست‌های درصف ارسال'],
+                ['مدیریت کانال‌ها و ادمین‌ها'],
+                ['بازگشت ⬅️'],
+            ];
+            $send = true;
+        } else if ($text == 'مدیریت کانال‌ها و ادمین‌ها') {
             $this->conversation->stop();
             $this->telegram->executeCommand('manageadmins');
-        } else if ($text == 'فوروارد') {
+        } else if ($text == 'فوروارد پست') {
             $this->conversation->stop();
             $this->telegram->executeCommand('forwardmessage');
         } else {
             $keyboard = [
-                ["📆 مدیریت پست‌ها", "➕ افزودن پست"],
-                ["نظرسنجی"],
-                ["✉️ ارتباط با ما", "⚙ ابزارهای مدیریتی"]
+                ["➕ افزودن پست"],
+                ["⚙ ابزارهای مدیریتی"],
+                ["راهنما", "✉️ ارتباط با ما"]
             ];
             $text = 'یکی‌از گزینه‌ها را انتخاب کنید.';
             $send = true;

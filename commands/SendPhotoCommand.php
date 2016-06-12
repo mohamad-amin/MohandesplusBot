@@ -84,8 +84,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $keyboard = [];
                             $i = 0;
                             foreach ($channels as $key) {
-                                $j = (int) floor($i/3);
-                                $keyboard[$j][$i % 3] = $key;
+                                $j = (int) floor($i/2);
+                                $keyboard[$j][$i % 2] = $key;
                                 $i++;
                             }
                             $keyboard[] = ['❌ بی‌خیال'];
