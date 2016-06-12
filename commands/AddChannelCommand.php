@@ -140,7 +140,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $result = Request::sendMessage($data);
                             break;
                         }
-                        // Todo: Done?
                         break;
                 }
             }
