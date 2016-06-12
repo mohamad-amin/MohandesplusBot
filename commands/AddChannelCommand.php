@@ -44,7 +44,11 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $message_id = $message->getMessageId();      //Get message Id
 
             $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
-            $state = 0;
+            if (isset($this->conversation->notes['state'])) {
+                $state = $this->conversation->notes['state'];
+            } else {
+                $state = 0;
+            }
             $data = [];
             $data['chat_id'] = $chat_id;
             if ($text == '➕ افزودن کانال') {
