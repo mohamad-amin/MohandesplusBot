@@ -112,7 +112,10 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'پیام خود را وارد کنید: (کمتر از ۱۵۰ کاراکتر)';
-                        $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
+                        $keyboard = [
+                            ['بدون متن'],
+                            ['بازگشت ⬅️', '❌ بی‌خیال']
+                        ];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -124,7 +127,11 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $result = Request::sendMessage($data);
                         break;
                     }
-                    $this->conversation->notes['messageText'] = $text;
+                    if ($text == 'بدون متن') {
+                        $this->conversation->notes['messageText'] = '';
+                    } else {
+                        $this->conversation->notes['messageText'] = $text;
+                    }
                     $this->conversation->notes['state'] = ++$state;
                     $text = '';
                     $this->conversation->update();
