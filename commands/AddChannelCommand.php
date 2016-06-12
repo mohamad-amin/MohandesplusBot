@@ -56,7 +56,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 $result = Request::sendMessage($data);
             } else {
                 switch ($state) {
-                    case 0: {
+                    case 0:
                         if (empty($text)) {
                             $data['text'] = '❗️حواستون باشه که روبات (...@) رو به‌صورت ادمین (Admin) به کانال اضافه کنید.
 
@@ -80,19 +80,68 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $data['text'] = 'این کانال قبلا اضافه شده است. اگر این کانال شماست از قسمت ارتباط با ما به ما گزارش دهید.';
                             $result = Request::sendMessage($data);
                             $this->telegram->executeCommand('cancel');
-                        } else {
-                            if (\AdminDatabase::addChannel($text, $user->getUsername())) {
-                                $data['text'] = 'کانال شما اضافه شد. برای استفاده از ربات باید این ربات را به صورت ادمین به کانال خود اضافه کنید.'
-                                    .' در غیر این صورت ربات برای شما کار نخواهد کرد.';
-                                $result = Request::sendMessage($data);
-                                $this->telegram->executeCommand('cancel');
-                            } else {
-                                $data['text'] = 'خطا در اضافه کردن کانال! لطفا مجددا تلاش کنید.آیدی کانال (بدون @) را وارد کنید:'."\n".$text;
-                                $result = Request::sendMessage($data);
-                            }
+                            break;
                         }
+                        $this->conversation->notes['state'] = ++$state;
+                        $this->conversation->notes['channel'] = $text;
+                        $text = '';
+                        $this->conversation->update();
+                    case 1:
+                        if ($text != 'انجام شد') {
+                            $data['text'] = 'برای استفاده از ربات باید این ربات را به صورت ادمین به کانال خود اضافه کنید.'
+                                .' در غیر این صورت ربات برای شما کار نخواهد کرد.';
+                            $data['text'] = "\n".'حال ربات را به صورت ادمین اضافه کنید و سپس دکمه‌ی انجام شد را بزنید.';
+                            $data['text'] = "\n".'سپس ربات برای اطمینان از اینکه شما صاحب کانال هستید یک پست با متن (تست ربات) روی کانال قرار می‌دهد که شما می‌توانید به سرعت آن را پاک کنید.';
+                            $keyboard = [
+                                ['انجام شد'],
+                                ['❌ بی‌خیال']
+                            ];
+                            $data['reply_markup'] = new ReplyKeyboardMarkup(
+                                [
+                                    'keyboard' => $keyboard,
+                                    'resize_keyboard' => true,
+                                    'one_time_keyboard' => true,
+                                    'selective' => true
+                                ]
+                            );
+                            $result = Request::sendMessage($data);
+                        }
+                        $tData = [];
+                        $tData['chat_id'] = '@'.$this->conversation->notes['channel'];
+                        $tData['text'] = 'تست ربات';
+                        if (Request::sendMessage($tData)) {
+                            if (\AdminDatabase::addChannel($text, $user->getUsername())) {
+                                $data['text'] = 'کانال شما با موفقیت اضافه شد :)';
+                                $result = Request::sendMessage($data);
+                                $this->conversation->cancel();
+                                $this->telegram->executeCommand('manageadmins');
+                            } else {
+                                $data['text'] = 'خطا در اضافه کردن کانال! لطفا مجددا تلاش کنید.';
+                                $result = Request::sendMessage($data);
+                                $this->conversation->cancel();
+                                $this->telegram->executeCommand('addchannel');
+                                break;
+                                // Done
+                            }
+                        } else {
+                            $data['text'] = 'ربات هنوز به کانال اضافه نشده!';
+                            $keyboard = [
+                                ['انجام شد'],
+                                ['❌ بی‌خیال']
+                            ];
+                            $data['reply_markup'] = new ReplyKeyboardMarkup(
+                                [
+                                    'keyboard' => $keyboard,
+                                    'resize_keyboard' => true,
+                                    'one_time_keyboard' => true,
+                                    'selective' => true
+                                ]
+                            );
+                            $result = Request::sendMessage($data);
+                            break;
+                        }
+                        // Todo: Done?
                         break;
-                    }
                 }
             }
 
