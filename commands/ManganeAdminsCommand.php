@@ -62,11 +62,13 @@ namespace Longman\TelegramBot\Commands\UserCommands {
 
             switch ($state) {
                 case 0:
-                    $validAnswers = ['📣 مدیریت کانال‌ها', '➕ افزودن کانال', '➖ حذف کانال'];
+                    $validAnswers = ['📣 کانال‌های من', '➕ افزودن کانال', '➖ حذف کانال'];
                     if (empty($text) || !in_array($text, $validAnswers)) {
                         $data['text'] = 'گزینه‌ی مورد نظر را انتخاب کنید:';
-                        $keyboard = [];
-                        $keyboard[] = ['➕ افزودن کانال', '➖ حذف کانال', '📣 مدیریت کانال‌ها'];
+                        $keyboard = [
+                            ['📣 کانال‌های من'],
+                            ['➖ حذف کانال', '📣 مدیریت کانال‌ها']
+                        ];
                         $keyboard[] = ['❌ بی‌خیال'];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
@@ -98,7 +100,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 $this->telegram->executeCommand('start');
                             }
                             break;
-                        case '📣 مدیریت کانال‌ها':
+                        case '📣 کانال‌های من':
                             if (count(\AdminDatabase::getAdminsChannels($user->getUserName())) > 0) {
                                 $this->conversation->notes['state'] = ++$state;
                                 $this->conversation->update();
@@ -127,7 +129,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $keyboard[$j][$i % 3] = $channel;
                             $i++;
                         }
-                        $keyboard[] = ['❌ بی‌خیال', 'بازگشت ⬅️'];
+                        $keyboard[] = ['بازگشت ⬅️', '❌ بی‌خیال'];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
@@ -150,8 +152,9 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $keyboard = [
-                            ['مشاهده‌ی ادمین‌ها', '➖ حذف ادمین', '➕ افزودن ادمین'],
-                            ['❌ بی‌خیال', 'بازگشت ⬅️']
+                            ['مشاهده‌ی ادمین‌ها'],
+                            ['➖ حذف ادمین', '➕ افزودن ادمین'],
+                            ['بازگشت ⬅️', '❌ بی‌خیال']
                         ];
                         $data['text'] = 'گزینه‌ی موردنظر را انتخاب کنید:';
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
@@ -220,7 +223,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         } else {
                             $data['text'] = 'ادمین موردنظر باید username داشته باشد. لطفا پیامی دیگر فوروارد کنید.';
                         }
-                        $keyboard = [['❌ بی‌خیال', 'بازگشت ⬅️']];
+                        $keyboard = [['بازگشت ⬅️', '❌ بی‌خیال']];
                         $data['reply_markup'] = new ReplyKeyboardMarkup(
                             [
                                 'keyboard' => $keyboard,
