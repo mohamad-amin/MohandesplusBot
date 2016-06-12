@@ -90,8 +90,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         if ($text != 'انجام شد') {
                             $data['text'] = 'برای استفاده از ربات باید این ربات را به صورت ادمین به کانال خود اضافه کنید.'
                                 .' در غیر این صورت ربات برای شما کار نخواهد کرد.';
-                            $data['text'] = "\n".'حال ربات را به صورت ادمین اضافه کنید و سپس دکمه‌ی انجام شد را بزنید.';
-                            $data['text'] = "\n".'سپس ربات برای اطمینان از اینکه شما صاحب کانال هستید یک پست با متن (تست ربات) روی کانال قرار می‌دهد که شما می‌توانید به سرعت آن را پاک کنید.';
+                            $data['text'] .= "\n".'حال ربات را به صورت ادمین اضافه کنید و سپس دکمه‌ی انجام شد را بزنید.';
+                            $data['text'] .= "\n".'سپس ربات برای اطمینان از اینکه شما صاحب کانال هستید یک پست با متن (تست ربات) روی کانال قرار می‌دهد که شما می‌توانید به سرعت آن را پاک کنید.';
                             $keyboard = [
                                 ['انجام شد'],
                                 ['❌ بی‌خیال']
@@ -105,13 +105,15 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 ]
                             );
                             $result = Request::sendMessage($data);
+                            break;
                         }
                         $tData = [];
                         $tData['chat_id'] = '@'.$this->conversation->notes['channel'];
                         $tData['text'] = 'تست ربات';
-                        if (Request::sendMessage($tData)) {
+                        $result = Request::sendMessage($tData);
+                        if ($result) {
                             if (\AdminDatabase::addChannel($text, $user->getUsername())) {
-                                $data['text'] = 'کانال شما با موفقیت اضافه شد :)';
+                                $data['text'] = 'کانال شما با موفقیت اضافه شد :)'."\n".$result;
                                 $result = Request::sendMessage($data);
                                 $this->conversation->cancel();
                                 $this->telegram->executeCommand('manageadmins');
@@ -121,7 +123,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 $this->conversation->cancel();
                                 $this->telegram->executeCommand('addchannel');
                                 break;
-                                // Done
                             }
                         } else {
                             $data['text'] = 'ربات هنوز به کانال اضافه نشده!';
