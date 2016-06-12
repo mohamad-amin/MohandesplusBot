@@ -107,12 +107,13 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                             $result = Request::sendMessage($data);
                             break;
                         }
+                        $channel = $this->conversation->notes['channel'];
                         $tData = [];
-                        $tData['chat_id'] = '@'.$this->conversation->notes['channel'];
+                        $tData['chat_id'] = '@'.$channel;
                         $tData['text'] = 'تست ربات';
                         $result = Request::sendMessage($tData);
                         if ($result) {
-                            if (\AdminDatabase::addChannel($text, $user->getUsername())) {
+                            if (\AdminDatabase::addChannel($channel, $user->getUsername())) {
                                 $data['text'] = 'کانال شما با موفقیت اضافه شد :)'."\n".$result;
                                 $result = Request::sendMessage($data);
                                 $this->conversation->cancel();

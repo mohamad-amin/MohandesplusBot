@@ -117,7 +117,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     if (!$shouldContinue) break;
                 case 1:
                     $channels = \AdminDatabase::getAdminsChannels($user->getUsername());
-                    if (empty($channels) || !in_array($text, $channels)) {
+                    if (empty($text) || !in_array($text, $channels)) {
                         if (!empty($text)) $data['text'] = 'لطفا کانال را درست انتخاب کنید:';
                         else $data['text'] = 'کانال را انتخاب کنید:';
                         $keyboard = [];

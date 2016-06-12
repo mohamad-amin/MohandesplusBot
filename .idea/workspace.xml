@@ -4,6 +4,7 @@
     <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="More secure channel adding&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/AddChannelCommand.php" afterPath="$PROJECT_DIR$/commands/AddChannelCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" afterPath="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/TestCommand.php" afterPath="$PROJECT_DIR$/commands/TestCommand.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
@@ -33,9 +34,11 @@
       <file leaf-file-name="AddChannelCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="115" column="94" selection-start-line="115" selection-start-column="94" selection-end-line="115" selection-end-column="94" />
-              <folding />
+            <state relative-caret-position="474">
+              <caret line="132" column="30" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
+              <folding>
+                <element signature="e#157#202#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,12 +76,12 @@
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/Request.php" />
         <option value="$PROJECT_DIR$/commands/ForwardMessageCommand.php" />
         <option value="$PROJECT_DIR$/commands/StartCommand.php" />
-        <option value="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendTextCommand.php" />
         <option value="$PROJECT_DIR$/getUpdateCLI.php" />
         <option value="$PROJECT_DIR$/commands/SendGifCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendPhotoCommand.php" />
         <option value="$PROJECT_DIR$/commands/SendVideoCommand.php" />
+        <option value="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
         <option value="$PROJECT_DIR$/commands/AddChannelCommand.php" />
       </list>
     </option>
@@ -280,14 +283,7 @@
       <workItem from="1465590912231" duration="31000" />
       <workItem from="1465715133981" duration="3080000" />
       <workItem from="1465737417689" duration="8361000" />
-      <workItem from="1465753360721" duration="525000" />
-    </task>
-    <task id="LOCAL-00045" summary="fixed bugs">
-      <created>1465028776878</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1465028776878</updated>
+      <workItem from="1465753360721" duration="1772000" />
     </task>
     <task id="LOCAL-00046" summary="fixed bugs">
       <created>1465029426005</created>
@@ -625,11 +621,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465745898281</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="More secure channel adding&#10;">
+      <created>1465753890573</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1465753890576</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189559000" />
+    <option name="totallyTimeSpent" value="190806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -646,6 +649,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30080864" sideWeight="0.49592668" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3156823" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -653,7 +657,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959569" sideWeight="0.5040733" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -941,6 +944,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="76" column="41" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -962,6 +966,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="340" column="29" selection-start-line="340" selection-start-column="29" selection-end-line="340" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -976,6 +981,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="114" column="2" selection-start-line="114" selection-start-column="2" selection-end-line="118" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -983,22 +989,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="91" column="28" selection-start-line="91" selection-start-column="28" selection-end-line="98" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="423">
+          <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="115" column="94" selection-start-line="115" selection-start-column="94" selection-end-line="115" selection-end-column="94" />
-          <folding />
+        <state relative-caret-position="474">
+          <caret line="132" column="30" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
+          <folding>
+            <element signature="e#157#202#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
