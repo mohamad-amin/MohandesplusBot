@@ -117,7 +117,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $tData['chat_id'] = '@'.$channel;
                         $tData['text'] = 'تست ربات';
                         $result = Request::sendMessage($tData);
-                        if ($result) {
+                        if ($result->isOk()) {
                             if (\AdminDatabase::addChannel($channel, $user->getUsername())) {
                                 $data['text'] = 'کانال شما با موفقیت اضافه شد :)'."\n".$result;
                                 $result = Request::sendMessage($data);

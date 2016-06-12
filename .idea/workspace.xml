@@ -30,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddChannelCommand.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddChannelCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+            <state relative-caret-position="460">
+              <caret line="128" column="26" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
               <folding>
                 <element signature="e#157#202#0#PHP" expanded="true" />
               </folding>
@@ -42,10 +42,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManganeAdminsCommand.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ManganeAdminsCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
+            <state relative-caret-position="-858">
               <caret line="394" column="31" selection-start-line="394" selection-start-column="31" selection-end-line="394" selection-end-column="31" />
               <folding />
             </state>
@@ -292,14 +292,7 @@
       <workItem from="1465590912231" duration="31000" />
       <workItem from="1465715133981" duration="3080000" />
       <workItem from="1465737417689" duration="8361000" />
-      <workItem from="1465753360721" duration="3298000" />
-    </task>
-    <task id="LOCAL-00048" summary="Added ability to hide link of image">
-      <created>1465034059388</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1465034059388</updated>
+      <workItem from="1465753360721" duration="3522000" />
     </task>
     <task id="LOCAL-00049" summary="test">
       <created>1465034865590</created>
@@ -637,11 +630,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465756422860</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="More secure channel adding&#10;">
+      <created>1465756718449</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1465756718449</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192332000" />
+    <option name="totallyTimeSpent" value="192556000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1004,21 +1004,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
+    <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
-          <folding>
-            <element signature="e#157#202#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-858">
+          <caret line="394" column="31" selection-start-line="394" selection-start-column="31" selection-end-line="394" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
+    <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="394" column="31" selection-start-line="394" selection-start-column="31" selection-end-line="394" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="460">
+          <caret line="128" column="26" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
+          <folding>
+            <element signature="e#157#202#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
