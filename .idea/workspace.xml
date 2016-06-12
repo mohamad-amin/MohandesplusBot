@@ -4,7 +4,6 @@
     <list default="true" id="dd725907-47e6-4d3d-8541-ba3c3df5d9bf" name="Default" comment="More secure channel adding&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/AddChannelCommand.php" afterPath="$PROJECT_DIR$/commands/AddChannelCommand.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" afterPath="$PROJECT_DIR$/commands/ManganeAdminsCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands/TestCommand.php" afterPath="$PROJECT_DIR$/commands/TestCommand.php" />
     </list>
     <ignored path="mohandesplusbot.iws" />
@@ -34,11 +33,9 @@
       <file leaf-file-name="AddChannelCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="132" column="30" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
-              <folding>
-                <element signature="e#157#202#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="387">
+              <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -283,14 +280,7 @@
       <workItem from="1465590912231" duration="31000" />
       <workItem from="1465715133981" duration="3080000" />
       <workItem from="1465737417689" duration="8361000" />
-      <workItem from="1465753360721" duration="1772000" />
-    </task>
-    <task id="LOCAL-00046" summary="fixed bugs">
-      <created>1465029426005</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1465029426005</updated>
+      <workItem from="1465753360721" duration="3003000" />
     </task>
     <task id="LOCAL-00047" summary="testing downloads">
       <created>1465031779254</created>
@@ -628,11 +618,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465753890576</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="More secure channel adding&#10;">
+      <created>1465755192964</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1465755192964</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190806000" />
+    <option name="totallyTimeSpent" value="192037000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -926,13 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="111" column="25" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/RemoveChannelCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -962,14 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="340" column="29" selection-start-line="340" selection-start-column="29" selection-end-line="340" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/SendPhotoCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="657">
@@ -977,37 +959,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/SendGifCommand.php">
+    <entry file="file://$PROJECT_DIR$/commands/SendTextCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="114" column="2" selection-start-line="114" selection-start-column="2" selection-end-line="118" selection-end-column="2" />
+        <state relative-caret-position="297">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/SendVideoCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="91" column="28" selection-start-line="91" selection-start-column="28" selection-end-line="98" selection-end-column="30" />
+        <state relative-caret-position="297">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/StartCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/SendGifCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/ManganeAdminsCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
+        <state relative-caret-position="297">
+          <caret line="470" column="53" selection-start-line="470" selection-start-column="51" selection-end-line="470" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/AddChannelCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="132" column="30" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
-          <folding>
-            <element signature="e#157#202#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="387">
+          <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
