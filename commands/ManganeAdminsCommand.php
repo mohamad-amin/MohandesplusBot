@@ -37,10 +37,8 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $chat_id = $chat->getId();
             $user_id = $user->getId();
             $text = $message->getText();
-            $message_id = $message->getMessageId();      //Get message Id
 
             $data = [];
-            $data['reply_to_message_id'] = $message_id;
             $data['chat_id'] = $chat_id;
             if (strpos($text, '/deleteadmin') !== false) {
                 $text = substr($text, 12);
@@ -149,7 +147,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $validAnswers = ['مشاهده‌ی ادمین‌ها', '➖ حذف ادمین', '➕ افزودن ادمین'];
                     if (empty($text) || !in_array($text, $validAnswers)) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $keyboard = [
                             ['مشاهده‌ی ادمین‌ها'],
@@ -216,7 +213,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $message->getForwardFrom()->getUsername() == null || empty($message->getForwardFrom()
                             ->getUsername())) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         if ($message->getForwardFrom() == null) {
                             $data['text'] = 'پیامی از ادمین مورد نظر فوروارد کنید:';
@@ -258,7 +254,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                     $helpers = \AdminDatabase::getHelpersFromChannel($channel, $user->getUsername());
                     if (empty($text) || !in_array($text, $helpers)) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'ادمین مورد نظر را انتخاب کنید:';
                         Request::sendMessage($data);
@@ -277,7 +272,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                 case 5:
                     if (empty($text) || ($text != '✅ بله' && $text != '❎ نه')) {
                         $data = [];
-                        $data['reply_to_message_id'] = $message_id;
                         $data['chat_id'] = $chat_id;
                         $data['text'] = 'آیا از حذف ' . '@' . $this->conversation->notes['helper'] . ' مطمئنید؟';
                         $keyboard = [['✅ بله', '❎ نه'], ['❌ بی‌خیال']];
