@@ -96,7 +96,6 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                                 .' در غیر این صورت ربات برای شما کار نخواهد کرد.';
                             $data['text'] .= "\n".'حال ربات را به صورت ادمین اضافه کنید و سپس دکمه‌ی انجام شد را بزنید.';
                             $data['text'] .= "\n".'سپس ربات برای اطمینان از اینکه شما صاحب کانال هستید یک پست با متن (تست ربات) روی کانال قرار می‌دهد که شما می‌توانید به سرعت آن را پاک کنید.';
-                            $data['text'] .= "\n".$text;
                             $keyboard = [
                                 ['انجام شد'],
                                 ['❌ بی‌خیال']
@@ -119,7 +118,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
                         $result = Request::sendMessage($tData);
                         if ($result->isOk()) {
                             if (\AdminDatabase::addChannel($channel, $user->getUsername())) {
-                                $data['text'] = 'کانال شما با موفقیت اضافه شد :)'."\n".$result;
+                                $data['text'] = 'کانال شما با موفقیت اضافه شد :)';
                                 $result = Request::sendMessage($data);
                                 $this->conversation->cancel();
                                 $this->telegram->executeCommand('manageadmins');
