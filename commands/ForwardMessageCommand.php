@@ -49,7 +49,7 @@ namespace Longman\TelegramBot\Commands\UserCommands {
             $data = [];
             $data['chat_id'] = $chat_id;
             $channels = \AdminDatabase::getHelpersChannels($user->getUsername());
-            if ($text == 'فوروارد') {
+            if ($text == 'فوروارد پست') {
                 $text = '';
             }
 
