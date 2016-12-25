@@ -18,19 +18,14 @@ $hLock=fopen(__FILE__.".lock", "w+");
 if(!flock($hLock, LOCK_EX | LOCK_NB))
     die("Already running. Exiting...");
 
-$API_KEY = '192363220:AAFSdry9_scVmTYoq9RSXM01FtKv8PNqK5k';
+$API_KEY = 'Genius :D';
 $BOT_NAME = 'MohandesplusBot';
-/*$mysql_credentials = [
-    'host'     => 'localhost',
-    'user'     => 'root',
-    'password' => '',
-    'database' => 'mohandesplusbot',
-];*/
+
 $mysql_credentials = [
-    'host'     => 'localhost',
-    'user'     => 'root',
-    'password' => 'MohandesPlus',
-    'database' => 'mohandesplusbot',
+    'host'     => '',
+    'user'     => '',
+    'password' => '',
+    'database' => '',
 ];
 
 $telegram = null;
@@ -52,14 +47,6 @@ try {
 }
 
 function checkQueueDatabase() {
-    /*$database = new medoo([
-        'database_type' => 'mysql',
-        'database_name' => 'mohandesplusbot',
-        'server' => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'charset' => 'utf8mb4'
-    ]);*/
     $database = new medoo([
         'database_type' => 'mysql',
         'database_name' => 'mohandesplusbot',
