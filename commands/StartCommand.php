@@ -218,8 +218,8 @@ namespace {
                 'database_type' => 'mysql',
                 'database_name' => 'mohandesplusbot',
                 'server' => 'localhost',
-                'username' => 'root',
-                'password' => 'MohandesPlus',
+                'username' => '',
+                'password' => 'Sooooo genius',
                 'charset' => 'utf8mb4'
             ]);
             $tData = [];
